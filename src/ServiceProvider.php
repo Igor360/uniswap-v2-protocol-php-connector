@@ -1,16 +1,16 @@
 <?php
 
-namespace Tighten\:package_php_namespace;
+namespace Igor360\UniswapV2Connector;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 
-class :package_php_namespaceServiceProvider extends ServiceProvider
+class ServiceProvider extends LaravelServiceProvider
 {
     public function boot()
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path(':package_name.php'),
+                __DIR__.'/../config/config.php' => config_path('uniswap-v2-connector.php'),
             ], 'config');
 
             /*
@@ -25,6 +25,6 @@ class :package_php_namespaceServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', ':package_name');
+        $this->mergeConfigFrom(__DIR__.'/../config/config.php', '');
     }
 }

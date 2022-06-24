@@ -1,6 +1,6 @@
 <?php
 
-namespace Tighten\:package_php_namespace\Tests;
+namespace Igor360\UniswapV2Connector\Tests;
 
 use PHPUnit\Framework\TestCase;
 

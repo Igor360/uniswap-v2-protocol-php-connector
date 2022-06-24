@@ -1,10 +1,10 @@
 <?php
 
-namespace Tighten\:package_php_namespace;
+namespace Igor360\UniswapV2Connector;
 
-use Illuminate\Support\Facades\Facade;
+use Illuminate\Support\Facades\Facade as LaravelFacade;
 
-class :package_php_namespaceFacade extends Facade
+class Facade extends LaravelFacade
 {
     protected static function getFacadeAccessor()
     {
