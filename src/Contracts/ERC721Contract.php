@@ -24,7 +24,7 @@ class ERC721Contract extends ContractService
      * @return string
      * @throws Exception
      */
-    public function transferTokens(string $from, string $to, int $tokenId): string
+    public function encodeTransferToken(string $from, string $to, int $tokenId): string
     {
         $this->validateAddress($from);
         $this->validateAddress($to);
@@ -39,7 +39,7 @@ class ERC721Contract extends ContractService
      * @return string
      * @throws Exception
      */
-    public function safeTransferFrom(string $from, string $to, int $tokenId): string
+    public function encodeSafeTransferFrom(string $from, string $to, int $tokenId): string
     {
         $this->validateAddress($from);
         $this->validateAddress($to);
@@ -59,18 +59,6 @@ class ERC721Contract extends ContractService
     {
         $this->validateAddress($from);
         return $this->ABIService->encodeCall('approve', [$from, $tokenId]);
-    }
-
-    public function mint(string $from, string $token, int $price, string $uri, int $royalties): string
-    {
-        $this->validateAddress($from);
-        return $this->ABIService->encodeCall('mint', [$from, $token, $price, $uri, $royalties]);
-    }
-
-    public function sendTo(int $tokenID, string $to): string
-    {
-        $this->validateAddress($to);
-        return $this->ABIService->encodeCall('sendTo', [$tokenID, $to]);
     }
 
     /**

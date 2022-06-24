@@ -14,6 +14,10 @@
             "name": "Igor360",
             "homepage": "https://github.com/Igor360",
             "role": "Developer"
+        },
+        {
+            "name": "MEREHEAD",
+            "homepage": "https://merehead.com/"
         }
     ],
     "require": {
