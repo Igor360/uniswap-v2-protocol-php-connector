@@ -1,18 +1,18 @@
-# :package_fullname
+#  Igor360\UniswapV2Connector;
+
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/tightenco/:package_name.svg?style=flat-square)](https://packagist.org/packages/tightenco/:package_name)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/tighten/:package_name/run-tests?label=tests)](https://github.com/tighten/:package_name/actions?query=workflow%3Arun-tests+branch%3Amain)
 
-**Note:** Replace ```:author_name``` ```:author_username``` ```:author_email``` ```:package_name``` ```:package_description``` ```:package_php_namespace``` with their correct values in [README.md](README.md), [composer.json](composer.json), and all three files under `src/`, then delete this line.
 
-Short description here, and maybe small justification of why it's valuable.
+Short description here, maybe in future, haven't time for now.
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require tightenco/:package_name
+composer require igor360/:package_name
 ```
 
 ## Usage
@@ -37,7 +37,7 @@ If you discover any security related issues, please email hello@tighten.co inste
 
 ## Credits
 
-- [:author_name](https://github.com/:author_username)
+- [Igor360](https://github.com/Igor360)
 - [All Contributors](../../contributors)
 
 ## License
