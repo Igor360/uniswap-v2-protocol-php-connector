@@ -4,6 +4,8 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v1/igor360/uniswap-v2-protocol-php-connector.svg?style=flat-square)](https://packagist.org/packages/igor360/uniswap-v2-protocol-php-connector)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/igor360/uniswap-v2-protocol-php-connector/run-tests?label=tests)](https://github.com/igor360/uniswap-v2-protocol-php-connector/actions?query=workflow%3Arun-tests+branch%3Amain)
 
+ATTENTION! It's package develops only for Laravel frameworks...
+
 Short description here, maybe in future, haven't time for now.
 
 ## Installation

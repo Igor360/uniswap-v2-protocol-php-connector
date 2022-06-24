@@ -12,19 +12,11 @@ class ServiceProvider extends LaravelServiceProvider
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('uniswap-v2-connector.php'),
             ], 'config');
-
-            /*
-            $this->loadViewsFrom(__DIR__.'/../resources/views', ':package_name');
-
-            $this->publishes([
-                __DIR__.'/../resources/views' => base_path('resources/views/vendor/:package_name'),
-            ], 'views');
-            */
         }
     }
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', '');
+        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'uniswap-v2-connector');
     }
 }
