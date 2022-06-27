@@ -55,12 +55,13 @@ class TokenService
         return json_encode($this->tokeInfo, JSON_THROW_ON_ERROR);
     }
 
-    public function loadTokenInfo(): void
+    public function loadTokenInfo(): self
     {
         $this->tokeInfo->name = $this->contract->name($this->contractAddress);
         $this->tokeInfo->symbol = $this->contract->symbol($this->contractAddress);
         $this->tokeInfo->decimals = $this->contract->decimals($this->contractAddress);
         $this->tokeInfo->totalSupply = $this->contract->totalSupply($this->contractAddress);
         $this->tokeInfo->owner = $this->contract->owner($this->contractAddress);
+        return $this;
     }
 }

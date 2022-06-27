@@ -29,10 +29,11 @@ class UniswapRouteService
         }
     }
 
-    public function loadRouterInfo(): void
+    public function loadRouterInfo(): self
     {
         $this->routerInfo->factory = $this->contract->getFactoryAddress($this->contractAddress);
         $this->routerInfo->baseToken = $this->contract->getBaseCoinAddress($this->contractAddress);
+        return $this;
     }
 
     /**

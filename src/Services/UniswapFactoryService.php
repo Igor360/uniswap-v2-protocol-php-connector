@@ -68,11 +68,12 @@ class UniswapFactoryService
         $this->factoryInfo->address = $contractAddress;
     }
 
-    public function loadFactoryInfo(): void
+    public function loadFactoryInfo(): self
     {
         $this->factoryInfo->allPairsLength = $this->contract->getAllPairsLenght($this->contractAddress);
         $this->factoryInfo->feeTo = $this->contract->getFeeToAddress($this->contractAddress);
         $this->factoryInfo->feeToSetter = $this->contract->getFeeToSetterAddress($this->contractAddress);
+        return $this;
     }
 
     public function getPairs(int $from = 0, int $elements = 15): array

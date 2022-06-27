@@ -121,15 +121,16 @@ class UniswapPairService
         $this->pairInfo->token1 = $this->getToken1();
     }
 
-    public function loadLpInfo(): void
+    public function loadLpInfo(): self
     {
         $this->pairInfo->lpName = $this->contract->name($this->contractAddress);
         $this->pairInfo->lpSymbol = $this->contract->symbol($this->contractAddress);
         $this->pairInfo->lpDecimals = (int)$this->contract->decimals($this->contractAddress);
         $this->pairInfo->lpSupply = $this->contract->totalSupply($this->contractAddress);
+        return $this;
     }
 
-    public function loadReserves(): void
+    public function loadReserves(): self
     {
         $reserves = $this->getReserves();
         $this->pairInfo->reserve0 = Arr::get($reserves, "_reserve0", "0");
@@ -137,38 +138,43 @@ class UniswapPairService
         $this->pairInfo->blockTimestamp = (int)Arr::get($reserves, "_blockTimestampLast", 0);
         $this->pairInfo->blockTimestampDateTime = $this->toDateTimeZone($this->pairInfo->blockTimestamp);
         $this->pairInfo->hasLiquidity = (int)$this->pairInfo->reserve1 > 0 && (int)$this->pairInfo->reserve0 > 0 && (int)$this->pairInfo->lpSupply > 0;
+        return $this;
     }
 
-    public function loadKLast(): void
+    public function loadKLast(): self
     {
         $this->pairInfo->kLast = $this->contract->getKLast($this->contractAddress);
+        return $this;
     }
 
-    public function loadPriceCumulative(): void
+    public function loadPriceCumulative(): self
     {
         $this->pairInfo->price0CumulativeLast = $this->contract->getPrice0CumulativeLast($this->contractAddress);
         $this->pairInfo->price1CumulativeLast = $this->contract->getPrice1CumulativeLast($this->contractAddress);
 
         $this->pairInfo->priceToken0toToken1 = $this->getAmountOut("1", $this->pairInfo->reserve0, $this->pairInfo->reserve1, $this->math);
         $this->pairInfo->priceToken1toToken0 = $this->getAmountOut("1", $this->pairInfo->reserve1, $this->pairInfo->reserve0, $this->math);
+        return $this;
     }
 
-    public function loadToken0Info(): void
+    public function loadToken0Info(): self
     {
         $this->pairInfo->token0Info = new Token();
         $this->pairInfo->token0Info->name = $this->contract->name($this->pairInfo->token0);
         $this->pairInfo->token0Info->symbol = $this->contract->symbol($this->pairInfo->token0);
         $this->pairInfo->token0Info->decimals = $this->contract->decimals($this->pairInfo->token0);
         $this->pairInfo->token0Info->totalSupply = $this->contract->totalSupply($this->pairInfo->token0);
+        return $this;
     }
 
-    public function loadToken1Info(): void
+    public function loadToken1Info(): self
     {
         $this->pairInfo->token1Info = new Token();
         $this->pairInfo->token1Info->name = $this->contract->name($this->pairInfo->token1);
         $this->pairInfo->token1Info->symbol = $this->contract->symbol($this->pairInfo->token1);
         $this->pairInfo->token1Info->decimals = $this->contract->decimals($this->pairInfo->token1);
         $this->pairInfo->token1Info->totalSupply = $this->contract->totalSupply($this->pairInfo->token1);
+        return $this;
     }
 
     public function getNonces(string $address)
