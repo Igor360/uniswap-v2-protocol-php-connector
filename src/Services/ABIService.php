@@ -9,6 +9,7 @@ use Igor360\UniswapV2Connector\Services\DataTypes\Keccak;
 use Igor360\UniswapV2Connector\Services\DataTypes\Method;
 use Igor360\UniswapV2Connector\Services\DataTypes\MethodParam;
 
+// TODO: REFACTOR THIS BAD CODE
 /**
  * @source https://github.com/digitaldonkey/ethereum-php
  */
@@ -259,15 +260,16 @@ class ABIService
         if ($type === "address") {
             return $this->decodeAddressResponse($encoded);
         }
-        $encoded = ltrim($encoded, "0");
         switch ($type) {
             case "hash":
             case "uint":
             case "int":
                 return Integers::Unpack($encoded);
             case "bool":
+                $encoded = ltrim($encoded, "0");
                 return boolval($encoded);
             case "string":
+                $encoded = ltrim($encoded, "0");
                 return ASCII::base16Decode($encoded);
             case "tuple":
             default:

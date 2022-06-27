@@ -4,6 +4,7 @@ namespace Igor360\UniswapV2Connector\Services;
 
 use Igor360\UniswapV2Connector\Contracts\ContractsFactory;
 use Igor360\UniswapV2Connector\Contracts\UniswapPair;
+use Igor360\UniswapV2Connector\Exceptions\InvalidMethodCallException;
 use Igor360\UniswapV2Connector\Interfaces\ConnectionInterface;
 use Igor360\UniswapV2Connector\Interfaces\IMath;
 use Igor360\UniswapV2Connector\Maths\MathFacade;
@@ -26,6 +27,10 @@ class UniswapPairService
 
     private IMath $math;
 
+    public const MINIMUM_LIQUIDITY = 10 ** 3;
+
+    private TokenService $tokenService;
+
     /**
      * @param string $contractAddress
      * @param UniswapPair $contract
@@ -38,7 +43,7 @@ class UniswapPairService
         $this->pairInfo = new Pair();
         $this->pairInfo->pairAddress = $contractAddress;
         $this->contract = ContractsFactory::make('pair', $credentials);
-
+        $this->tokenService = new TokenService(null, $credentials);
         if (!is_null($contractAddress)) {
             $this->loadPairInfo();
             if ($this->pairInfo->lpSymbol === "Cake-LP") {
@@ -58,10 +63,11 @@ class UniswapPairService
     /**
      * @param string $contractAddress
      */
-    public function setContractAddress(string $contractAddress): void
+    public function setContractAddress(string $contractAddress): self
     {
         $this->contractAddress = $contractAddress;
         $this->pairInfo->pairAddress = $contractAddress;
+        return $this;
     }
 
     /**
@@ -137,7 +143,7 @@ class UniswapPairService
         $this->pairInfo->reserve1 = Arr::get($reserves, "_reserve1", "0");
         $this->pairInfo->blockTimestamp = (int)Arr::get($reserves, "_blockTimestampLast", 0);
         $this->pairInfo->blockTimestampDateTime = $this->toDateTimeZone($this->pairInfo->blockTimestamp);
-        $this->pairInfo->hasLiquidity = (int)$this->pairInfo->reserve1 > 0 && (int)$this->pairInfo->reserve0 > 0 && (int)$this->pairInfo->lpSupply > 0;
+        $this->pairInfo->hasLiquidity = (int)$this->pairInfo->reserve1 > 0 && (int)$this->pairInfo->reserve0 > 0 && (int)$this->pairInfo->lpSupply >= self::MINIMUM_LIQUIDITY;
         return $this;
     }
 
@@ -175,6 +181,24 @@ class UniswapPairService
         $this->pairInfo->token1Info->decimals = $this->contract->decimals($this->pairInfo->token1);
         $this->pairInfo->token1Info->totalSupply = $this->contract->totalSupply($this->pairInfo->token1);
         return $this;
+    }
+
+    public function getToken0Service(): TokenService
+    {
+        if (is_null($this->pairInfo->token1)) {
+            throw new InvalidMethodCallException("Token address not set");
+        }
+        $this->tokenService->setContractAddress($this->pairInfo->token0)->loadTokenInfo();
+        return $this->tokenService;
+    }
+
+    public function getToken1Service(): TokenService
+    {
+        if (is_null($this->pairInfo->token1)) {
+            throw new InvalidMethodCallException("Token address not set");
+        }
+        $this->tokenService->setContractAddress($this->pairInfo->token1)->loadTokenInfo();
+        return $this->tokenService;
     }
 
     public function getNonces(string $address)

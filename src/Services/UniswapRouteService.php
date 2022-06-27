@@ -46,11 +46,13 @@ class UniswapRouteService
 
     /**
      * @param string|null $contractAddress
+     * @return UniswapRouteService
      */
-    public function setContractAddress(?string $contractAddress): void
+    public function setContractAddress(?string $contractAddress): self
     {
         $this->contractAddress = $contractAddress;
         $this->routerInfo->address = $contractAddress;
+        return $this;
     }
 
     public function getFactory(): UniswapFactoryService

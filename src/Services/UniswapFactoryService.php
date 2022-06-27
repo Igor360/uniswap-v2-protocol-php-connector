@@ -61,11 +61,13 @@ class UniswapFactoryService
 
     /**
      * @param string|null $contractAddress
+     * @return UniswapFactoryService
      */
-    public function setContractAddress(?string $contractAddress): void
+    public function setContractAddress(?string $contractAddress): self
     {
         $this->contractAddress = $contractAddress;
         $this->factoryInfo->address = $contractAddress;
+        return $this;
     }
 
     public function loadFactoryInfo(): self

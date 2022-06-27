@@ -36,10 +36,12 @@ class TokenService
 
     /**
      * @param string|null $contractAddress
+     * @return TokenService
      */
-    public function setContractAddress(?string $contractAddress): void
+    public function setContractAddress(?string $contractAddress): self
     {
         $this->contractAddress = $contractAddress;
+        return $this;
     }
 
     public function getTokenInfo(): Token
@@ -63,5 +65,15 @@ class TokenService
         $this->tokeInfo->totalSupply = $this->contract->totalSupply($this->contractAddress);
         $this->tokeInfo->owner = $this->contract->owner($this->contractAddress);
         return $this;
+    }
+
+    public function getBalance(string $address): string
+    {
+        return $this->contract->balanceOfString($this->contractAddress, $address);
+    }
+
+    public function getAllowance(string $owner, string $spender): ?string
+    {
+        return $this->contract->allowance($this->contractAddress, $owner, $spender);
     }
 }

@@ -17,7 +17,7 @@ class ERC20Contract extends ContractService
     {
         $this->validateAddress($contractAddress, $address);
         $res = $this->callContractFunction($contractAddress, "balanceOf", [$address]);
-        return sprintf("%0.0f", hexdec($res));
+        return sprintf("%0.0f", hexdec(Arr::first($res)));
     }
 
     public function getBalance(string $address): string
@@ -31,14 +31,14 @@ class ERC20Contract extends ContractService
     {
         $this->validateAddress($contractAddress, $address);
         $res = $this->callContractFunction($contractAddress, "balanceOf", [$address]);
-        return sprintf("%0.0f", Arr::first($res));
+        return Arr::first($res);
     }
 
     public function totalSupply(string $contractAddress): string
     {
         $this->validateAddress($contractAddress);
         $res = $this->callContractFunction($contractAddress, "totalSupply");
-        return sprintf("%0.0f", Arr::first($res));
+        return Arr::first($res);
     }
 
     public function decimals(string $contractAddress): string
@@ -64,6 +64,12 @@ class ERC20Contract extends ContractService
     {
         $this->validateAddress($contractAddress);
         return Arr::first($this->callContractFunction($contractAddress, "symbol"));
+    }
+
+    public function allowance(string $contractAddress, string $owner, string $spender): ?string
+    {
+        $this->validateAddress($contractAddress, $owner, $spender);
+        return Arr::first($this->callContractFunction($contractAddress, "allowance", [$owner, $spender]));
     }
 
     public function encodeTransfer(string $to, int $amount): string
