@@ -51,10 +51,7 @@
         "laravel": {
             "providers": [
                 "Igor360\\UniswapV2Connector\\ServiceProvider"
-            ],
-            "aliases": {
-                "uniswap-v2-protocol-php-connector": "Igor360\\UniswapV2Connector\\Facade"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",
