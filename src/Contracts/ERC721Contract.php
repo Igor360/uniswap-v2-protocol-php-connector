@@ -3,6 +3,7 @@
 namespace Igor360\UniswapV2Connector\Contracts;
 
 use Exception;
+use Igor360\UniswapV2Connector\Configs\ConfigFacade as Config;
 use Igor360\UniswapV2Connector\Exceptions\InvalidAddressException;
 use Igor360\UniswapV2Connector\Services\ContractService;
 use Illuminate\Support\Arr;
@@ -11,7 +12,7 @@ class ERC721Contract extends ContractService
 {
     function abi(): array
     {
-        return json_decode(config("uniswap-v2-connector.erc721ABI"), true, 512, JSON_THROW_ON_ERROR);
+        return json_decode(Config::get("uniswap-v2-connector.erc721ABI"), true, 512, JSON_THROW_ON_ERROR);
     }
 
     /**

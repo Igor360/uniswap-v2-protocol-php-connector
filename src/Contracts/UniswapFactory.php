@@ -2,13 +2,15 @@
 
 namespace Igor360\UniswapV2Connector\Contracts;
 
+use Igor360\UniswapV2Connector\Configs\ConfigFacade as Config;
 use Igor360\UniswapV2Connector\Services\ContractService;
+use Illuminate\Support\Arr;
 
 class UniswapFactory extends ContractService
 {
     function abi(): array
     {
-        return json_decode(config("uniswap-v2-connector.factoryABI"), true, 512, JSON_THROW_ON_ERROR);
+        return json_decode(Config::get("uniswap-v2-connector.factoryABI"), true, 512, JSON_THROW_ON_ERROR);
     }
 
     // Setters
@@ -39,26 +41,26 @@ class UniswapFactory extends ContractService
     {
         $this->validateAddress($contractAddress);
 
-        return $this->callContractFunction($contractAddress, 'allPairsLength');
+        return Arr::first($this->callContractFunction($contractAddress, 'allPairsLength'));
     }
 
     public function getPoolAddressByTokensAddresses(string $contractAddress, string $tokenA, string $tokenB)
     {
         $this->validateAddress($contractAddress, $tokenB, $tokenA);
-        return $this->callContractFunction($contractAddress, 'getPair');
+        return Arr::first($this->callContractFunction($contractAddress, 'getPair', [$tokenA, $tokenB]));
     }
 
     public function getFeeToAddress(string $contractAddress)
     {
         $this->validateAddress($contractAddress);
 
-        return $this->callContractFunction($contractAddress, 'feeTo');
+        return Arr::first($this->callContractFunction($contractAddress, 'feeTo'));
     }
 
     public function getFeeToSetterAddress(string $contractAddress)
     {
         $this->validateAddress($contractAddress);
-        return $this->callContractFunction($contractAddress, "feeToSetter");
+        return Arr::first($this->callContractFunction($contractAddress, "feeToSetter"));
     }
 }
 

@@ -39,8 +39,13 @@ If you discover any security related issues, please email hello@tighten.co inste
 ## Credits
 
 - [Igor360](https://github.com/Igor360)
+- [MEREHEAD](https://merehead.com/)
 - [All Contributors](../../contributors)
 
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+## Links
+
+- [Package Development docs](https://laravelpackage.com/)

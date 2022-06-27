@@ -5,6 +5,7 @@ namespace Igor360\UniswapV2Connector\Services;
 use Igor360\UniswapV2Connector\Exceptions\ContractABIException;
 use Igor360\UniswapV2Connector\Services\DataTypes\ASCII;
 use Igor360\UniswapV2Connector\Services\DataTypes\Integers;
+use Igor360\UniswapV2Connector\Services\DataTypes\Keccak;
 use Igor360\UniswapV2Connector\Services\DataTypes\Method;
 use Igor360\UniswapV2Connector\Services\DataTypes\MethodParam;
 
@@ -28,7 +29,7 @@ class ABIService
 
     /**
      * ABI constructor.
-     * @param  array  $abi
+     * @param array $abi
      */
     public function __construct(array $abi)
     {
@@ -91,8 +92,8 @@ class ABIService
     }
 
     /**
-     * @param  string  $name
-     * @param  array|null  $args
+     * @param string $name
+     * @param array|null $args
      * @return string
      * @throws ContractABIException
      * @throws \Exception
@@ -130,12 +131,13 @@ class ABIService
             $methodParamsTypes[] = $param->type;
         }
 
+
         $encodedMethodCall = Keccak::hash(sprintf('%s(%s)', $method->name, implode(",", $methodParamsTypes)), 256);
-        return '0x'.substr($encodedMethodCall, 0, 8).$encoded;
+        return '0x' . substr($encodedMethodCall, 0, 8) . $encoded;
     }
 
     /**
-     * @param  string  $type
+     * @param string $type
      * @param $value
      * @return string
      * @throws ContractABIException
@@ -147,6 +149,20 @@ class ABIService
             $len = null;
         }
 
+        // Handle array types
+
+        if ($type === "address[]") {
+            $hex = null;
+            foreach ($value as $address) {
+                $hex .= str_pad(substr($address, 2), 64, "0", STR_PAD_LEFT);
+            }
+            $countElements = count($value);
+            $offset = 64;
+            $offsetHex = substr(str_pad(Integers::Pack_UInt_BE($offset), 64, "0", STR_PAD_LEFT), 0, 64);
+            $countElementsHex = substr(str_pad(Integers::Pack_UInt_BE($countElements), 64, "0", STR_PAD_LEFT), 0, 64);
+
+            return $offsetHex . $countElementsHex . $hex;
+        }
         $type = preg_replace('/[^a-z]/', '', $type);
         switch ($type) {
             case "hash":
@@ -169,12 +185,12 @@ class ABIService
                 throw new ContractABIException(sprintf('Cannot encode value of type "%s"', $type));
         }
 
-        return substr(str_pad(strval($value), 64, "0", STR_PAD_LEFT), 0, 64);
+        return substr(str_pad((string)$value, 64, "0", STR_PAD_LEFT), 0, 64);
     }
 
     /**
-     * @param  string  $name
-     * @param  string  $encoded
+     * @param string $name
+     * @param string $encoded
      * @return array
      * @throws ContractABIException
      */
@@ -205,7 +221,6 @@ class ABIService
             $chunks = str_split($encoded, 64);
         }
 
-
         $result = []; // Prepare
         for ($i = 0; $i < $methodResponseParamsCount; $i++) {
             /** @var MethodParam $param */
@@ -224,23 +239,29 @@ class ABIService
     }
 
     /**
-     * @param  string  $type
-     * @param  string  $encoded
+     * @param string $type
+     * @param string $encoded
      * @throws ContractABIException
      */
     public function decodeArg(string $type, string $encoded, string $method = '')
     {
+
+        if (str_contains($type, "[]")) {
+            return $this->decodeArrayValue($type, $encoded);
+        }
+
         $len = preg_replace('/[^0-9]/', '', $type);
         if (!$len) {
             $len = null;
         }
         $type = preg_replace('/[^a-z]/', '', $type);
 
+        if ($type === "address") {
+            return $this->decodeAddressResponse($encoded);
+        }
         $encoded = ltrim($encoded, "0");
         switch ($type) {
             case "hash":
-            case "address":
-                return '0x'.$encoded;
             case "uint":
             case "int":
                 return Integers::Unpack($encoded);
@@ -264,6 +285,39 @@ class ABIService
         if (strlen($hex) !== 64) {
             return $hex;
         }
-        return '0x'.substr($hex, 24); // 64 - address length
+        return '0x' . substr($hex, 24); // 64 - address length
+    }
+
+    public function decodeArrayValue(string $type, string $encoded, string $method = ''): array
+    {
+        $decodedVars = [];
+        $chunks = str_split($encoded, 64);
+        $type = preg_replace('/[^a-z]/', '', $type);
+        if (count($chunks) >= 2) {
+            $size = hexdec($chunks[1]);
+            array_splice($chunks, 0, $size);
+            while ($size > 0) {
+                $encoded = ltrim($chunks[$size - 1], "0");
+                switch ($type) {
+                    case "hash":
+                    case "uint":
+                    case "int":
+                        $decodedVars[] = Integers::Unpack($encoded);
+                        break;
+                    case "bool":
+                        $decodedVars[] = boolval($encoded);
+                        break;
+                    case "string":
+                        $decodedVars[] = ASCII::base16Decode($encoded);
+                        break;
+                    case "tuple":
+                    default:
+                        throw new ContractABIException(sprintf('Cannot encode value of type "%s"', $type));
+                }
+                $size--;
+            }
+            $decodedVars = array_reverse($decodedVars);
+        }
+        return $decodedVars;
     }
 }

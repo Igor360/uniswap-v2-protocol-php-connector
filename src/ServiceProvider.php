@@ -2,6 +2,7 @@
 
 namespace Igor360\UniswapV2Connector;
 
+use Igor360\UniswapV2Connector\Configs\Config;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 
 class ServiceProvider extends LaravelServiceProvider
@@ -10,13 +11,14 @@ class ServiceProvider extends LaravelServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('uniswap-v2-connector.php'),
+                __DIR__ . '/../config/config.php' => \config_path('uniswap-v2-connector.php'),
             ], 'config');
         }
     }
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'uniswap-v2-connector');
+        $this->app->bind(UniswapV2Connector::class, fn() => new UniswapV2Connector());
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', Config::BASE_KEY);
     }
 }

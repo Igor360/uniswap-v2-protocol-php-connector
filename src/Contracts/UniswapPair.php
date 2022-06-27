@@ -2,14 +2,16 @@
 
 namespace Igor360\UniswapV2Connector\Contracts;
 
-use Igor360\UniswapV2Connector\Services\ContractService;
 
 ///
+use Igor360\UniswapV2Connector\Configs\ConfigFacade as Config;
+use Illuminate\Support\Arr;
+
 class UniswapPair extends ERC20Contract
 {
     function abi(): array
     {
-        return json_decode(config("uniswap-v2-connector.pairABI"), true, 512, JSON_THROW_ON_ERROR);
+        return json_decode(Config::get("uniswap-v2-connector.pairABI"), true, 512, JSON_THROW_ON_ERROR);
     }
 
     /// Getters
@@ -30,7 +32,7 @@ class UniswapPair extends ERC20Contract
     public function getKLast(string $contractAddress)
     {
         $this->validateAddress($contractAddress);
-        return $this->callContractFunction($contractAddress, "kLast");
+        return Arr::first($this->callContractFunction($contractAddress, "kLast"));
     }
 
     public function getNoncesByAddress(string $contractAddress, string $account)
@@ -44,14 +46,14 @@ class UniswapPair extends ERC20Contract
     {
         $this->validateAddress($contractAddress);
 
-        return $this->callContractFunction($contractAddress, "price0CumulativeLast");
+        return Arr::first($this->callContractFunction($contractAddress, "price0CumulativeLast"));
     }
 
     public function getPrice1CumulativeLast(string $contractAddress)
     {
         $this->validateAddress($contractAddress);
 
-        return $this->callContractFunction($contractAddress, "price1CumulativeLast");
+        return Arr::first($this->callContractFunction($contractAddress, "price1CumulativeLast"));
     }
 
     public function getReserves(string $contractAddress)

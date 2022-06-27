@@ -2,18 +2,19 @@
 
 namespace Igor360\UniswapV2Connector\Connections;
 
+use Igor360\UniswapV2Connector\Configs\ConfigFacade as Config;
 use Igor360\UniswapV2Connector\Interfaces\ConnectionInterface;
 
 class ConfigCredentials implements ConnectionInterface
 {
     public function host(): string
     {
-        return config("blockchain.eth.host");
+        return Config::get("uniswap-v2-connector.eth.host");
     }
 
     public function port(): ?int
     {
-        return config("blockchain.eth.port");
+        return Config::get("uniswap-v2-connector.eth.port");
     }
 
     /**
@@ -22,6 +23,6 @@ class ConfigCredentials implements ConnectionInterface
      */
     public function ssl(): bool
     {
-        return (bool)config('blockchain.eth.ssl');
+        return (bool)Config::get('uniswap-v2-connector.eth.ssl');
     }
 }

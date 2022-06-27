@@ -11,6 +11,6 @@ class Facade extends LaravelFacade
 {
     protected static function getFacadeAccessor()
     {
-        return 'igor360/uniswap-v2-protocol-php-connector';
+        return UniswapV2Connector::class;
     }
 }

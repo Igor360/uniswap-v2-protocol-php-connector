@@ -21,7 +21,7 @@ abstract class ContractService extends EthereumService
         $this->ABIService = new ABIService($this->abi());
     }
 
-    public function callContractFunction(
+    public function clientCallContractFunction(
         string $contractAddress,
         string $functionName,
         array  $params = [],
@@ -31,8 +31,23 @@ abstract class ContractService extends EthereumService
         $tx = new \stdClass();
         $tx->to = $contractAddress;
         $tx->data = $this->ABIService->encodeCall($functionName, $params);
-
         return $this->ethCall($tx, is_int($block) ? '0x' . dechex($block) : $block, $functionName);
+    }
+
+    public function callContractFunction(
+        string $contractAddress,
+        string $functionName,
+        array  $params = [],
+               $block = "latest"
+    )
+    {
+        $callRes = $this->clientCallContractFunction($contractAddress, $functionName, $params, $block);
+        return $this->decodeRespose($functionName, $callRes);
+    }
+
+    public function decodeRespose(string $function, $response)
+    {
+        return $this->ABIService->decodeResponse($function, $response);
     }
 }
 

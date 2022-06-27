@@ -127,7 +127,7 @@ class Method
                 );
             }
 
-            if (!is_null($type) && !preg_match('/^((hash|uint|int|string)(8|16|32|64|128|256)?(\[\])?|bool(\[\])?|address(\[\])?|(bytes)(4|32)?|tuple(\[\])?|tuple)$/', $type)) {
+            if (!is_null($type) && !preg_match('/^((hash|uint|int|string)(8|16|32|64|112|128|256)?(\[\])?|bool(\[\])?|address(\[\])?|(bytes)(4|32)?|tuple(\[\])?|tuple)$/', $type)) {
                 throw new ContractABIException(
                     sprintf('Invalid/unacceptable type for param "%s" in "%s"', $name, $which)
                 );

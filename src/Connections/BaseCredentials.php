@@ -17,7 +17,7 @@ class BaseCredentials implements ConnectionInterface
      * @param int|null $port
      * @param bool $ssl
      */
-    public function __construct(string $host, ?int $port, bool $ssl = false)
+    public function __construct(string $host, ?int $port = null, bool $ssl = false)
     {
         $this->host = $host;
         $this->port = $port;

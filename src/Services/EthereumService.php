@@ -22,7 +22,7 @@ class EthereumService extends EthereumRPC
      * @param mixed ...$addresses
      * @throws InvalidAddressException
      */
-    protected
+    public
     function validateAddress(
         ...$addresses
     ): void
