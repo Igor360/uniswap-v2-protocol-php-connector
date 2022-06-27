@@ -19,6 +19,6 @@ class ServiceProvider extends LaravelServiceProvider
     public function register()
     {
         $this->app->bind(UniswapV2Connector::class, fn() => new UniswapV2Connector());
-        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', Config::BASE_KEY);
+        $this->mergeConfigFrom(__DIR__ . '/config/config.php', Config::BASE_KEY);
     }
 }
