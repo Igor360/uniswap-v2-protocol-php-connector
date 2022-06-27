@@ -14,7 +14,5 @@ class UniswapV2Connector
         $this->handleEmptyConnection($credentials);
     }
 
-    public function loadPair() {
-
-    }
+    public function loadPair() {}
 }
