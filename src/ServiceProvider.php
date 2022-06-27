@@ -11,7 +11,7 @@ class ServiceProvider extends LaravelServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/config/config.php' => \config_path(Config::BASE_KEY . '.php'),
+                __DIR__ . '/../config/config.php' => \config_path(Config::BASE_KEY . '.php'),
             ], 'config');
         }
     }
