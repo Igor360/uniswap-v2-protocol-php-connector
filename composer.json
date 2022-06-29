@@ -43,7 +43,7 @@
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
-        "generateDoc": " phpDocumentor -d . -t docs/api"
+        "generateDoc": " phpDocumentor -d ./src -t docs"
     },
     "config": {
         "sort-packages": true
