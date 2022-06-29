@@ -5,7 +5,7 @@ namespace Igor360\UniswapV2Connector\Configs;
 use Igor360\UniswapV2Connector\Exceptions\InvalidConstantException;
 use Igor360\UniswapV2Connector\Exceptions\InvalidImplementationClassException;
 use Igor360\UniswapV2Connector\Exceptions\InvalidMethodCallException;
-use Igor360\UniswapV2Connector\Interfaces\IConfig;
+use Igor360\UniswapV2Connector\Interfaces\ConfigInterface;
 use ReflectionClass;
 
 abstract class ConfigFacade
@@ -14,10 +14,10 @@ abstract class ConfigFacade
 
     public static function changeConfigSource(string $newSource): void
     {
-        if (is_subclass_of($newSource, IConfig::class)) {
+        if (is_subclass_of($newSource, ConfigInterface::class)) {
             self::$configSource = $newSource;
         }
-        throw new InvalidImplementationClassException("New source config is not realize IConfig");
+        throw new InvalidImplementationClassException("New source config is not realize ConfigInterface");
     }
 
     public static function __callStatic($name, $arguments)

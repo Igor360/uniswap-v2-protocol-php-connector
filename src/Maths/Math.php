@@ -2,9 +2,9 @@
 
 namespace Igor360\UniswapV2Connector\Maths;
 
-use Igor360\UniswapV2Connector\Interfaces\IMath;
+use Igor360\UniswapV2Connector\Interfaces\MathInterface;
 
-class Math implements IMath
+class Math implements MathInterface
 {
     public function scale(): int
     {

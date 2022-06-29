@@ -2,7 +2,7 @@
 
 namespace Igor360\UniswapV2Connector\Interfaces;
 
-interface ITransactions
+interface TransactionSwapInterface
 {
     // TOKEN
 

@@ -2,7 +2,7 @@
 
 namespace Igor360\UniswapV2Connector\Utils;
 
-use Igor360\UniswapV2Connector\Interfaces\IMath;
+use Igor360\UniswapV2Connector\Interfaces\MathInterface;
 
 trait PairLib
 {
@@ -38,7 +38,7 @@ trait PairLib
         }
     }
 
-    public function getAmountOut($amountIn, $reserveIn, $reserveOut, IMath $math)
+    public function getAmountOut($amountIn, $reserveIn, $reserveOut, MathInterface $math)
     {
         $amountInWithFee = bcmul($amountIn, $this->FEE_DENOMINATOR, $math->scale());
         $numerator = bcmul($amountInWithFee, $reserveOut, $math->scale());
@@ -47,19 +47,19 @@ trait PairLib
     }
 
 
-    public function getAmountIn($amountOut, $reserveIn, $reserveOut, IMath $math)
+    public function getAmountIn($amountOut, $reserveIn, $reserveOut, MathInterface $math)
     {
         $numerator = bcmul(bcmul($reserveIn, $amountOut, $math->scale()), "10000", $math->scale());
         $denominator = bcmul(bcsub($reserveOut, $amountOut, $math->scale()), $this->FEE_DENOMINATOR, $math->scale());
         return bcadd(bcdiv($numerator, $denominator), "1", $math->scale());
     }
 
-    public function quote($amountA, $reserveA, $reserveB, IMath $math)
+    public function quote($amountA, $reserveA, $reserveB, MathInterface $math)
     {
         return bcdiv(bcmul($amountA, $reserveB, $math->scale()), $reserveA, $math->scale());
     }
 
-    public function amountWithSlippage(string $amount, IMath $math): string
+    public function amountWithSlippage(string $amount, MathInterface $math): string
     {
         //min_tokens = int(amount_out * (1 - (slippage / 100)))
         return bcmul($amount, bcsub("1", bcdiv($this->SLIPPAGE, "100", $math->scale()), $math->scale()), $math->scale());

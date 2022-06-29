@@ -4,7 +4,7 @@ namespace Igor360\UniswapV2Connector\Maths;
 
 use Igor360\UniswapV2Connector\Exceptions\InvalidImplementationClassException;
 use Igor360\UniswapV2Connector\Exceptions\InvalidMethodCallException;
-use Igor360\UniswapV2Connector\Interfaces\IMath;
+use Igor360\UniswapV2Connector\Interfaces\MathInterface;
 
 abstract class MathFacade
 {
@@ -12,10 +12,10 @@ abstract class MathFacade
 
     public static function changeConfigSource(string $newSource): void
     {
-        if (is_subclass_of($newSource, IMath::class)) {
+        if (is_subclass_of($newSource, MathInterface::class)) {
             self::$source = $newSource;
         }
-        throw new InvalidImplementationClassException("New source config is not realize IConfig");
+        throw new InvalidImplementationClassException("New source config is not realize ConfigInterface");
     }
 
     public static function __callStatic($name, $arguments)
@@ -28,7 +28,7 @@ abstract class MathFacade
     }
 
 
-    public static function getSourceInstance(): IMath
+    public static function getSourceInstance(): MathInterface
     {
         return new self::$source();
     }

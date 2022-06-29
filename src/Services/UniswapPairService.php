@@ -6,7 +6,7 @@ use Igor360\UniswapV2Connector\Contracts\ContractsFactory;
 use Igor360\UniswapV2Connector\Contracts\UniswapPair;
 use Igor360\UniswapV2Connector\Exceptions\InvalidMethodCallException;
 use Igor360\UniswapV2Connector\Interfaces\ConnectionInterface;
-use Igor360\UniswapV2Connector\Interfaces\IMath;
+use Igor360\UniswapV2Connector\Interfaces\MathInterface;
 use Igor360\UniswapV2Connector\Maths\MathFacade;
 use Igor360\UniswapV2Connector\Models\Pair;
 use Igor360\UniswapV2Connector\Models\Token;
@@ -25,7 +25,7 @@ class UniswapPairService
 
     private Pair $pairInfo;
 
-    private IMath $math;
+    private MathInterface $math;
 
     public const MINIMUM_LIQUIDITY = 10 ** 3;
 

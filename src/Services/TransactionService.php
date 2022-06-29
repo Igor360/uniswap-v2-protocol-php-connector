@@ -4,11 +4,10 @@ namespace Igor360\UniswapV2Connector\Services;
 
 use Igor360\UniswapV2Connector\Exceptions\TransactionException;
 use Igor360\UniswapV2Connector\Interfaces\ConnectionInterface;
-use Igor360\UniswapV2Connector\Interfaces\ITransactions;
 use Igor360\UniswapV2Connector\Models\Transaction;
 use Illuminate\Support\Arr;
 
-class TransactionService implements ITransactions
+class TransactionService
 {
     private string $transactionAddress;
 
@@ -25,7 +24,9 @@ class TransactionService implements ITransactions
         $this->transactionAddress = $transactionAddress;
         $this->rpc = new EthereumService($credentials);
         $this->transactionInfo = new Transaction();
-        $this->loadTransaction();
+        $this
+            ->loadTransaction()
+            ->loadLogs();
     }
 
     public function loadTransaction(): self
@@ -52,10 +53,10 @@ class TransactionService implements ITransactions
         $transaction = $this->rpc->getTransactionReceipt($this->transactionAddress);
         $this->transactionInfo->status = Arr::get($transaction, "status") === "0x01";
         $this->transactionInfo->logsBloom = Arr::get($transaction, "logsBloom");
-        $this->transactionInfo->cumulativeGasUsed = Arr::get($transaction, "cumulativeGasUsed");
-        $this->transactionInfo->gasUsed = (string)hexdec(Arr::get($transaction, "gasUsed"));
+        $this->transactionInfo->cumulativeGasUsed = (string)hexdec(Arr::get($transaction, "cumulativeGasUsed") ?? "");
+        $this->transactionInfo->gasUsed = (string)hexdec(Arr::get($transaction, "gasUsed") ?? "");
         $this->transactionInfo->logs = Arr::get($transaction, "logs");
-        $this->transactionInfo->transactionIndex = Arr::get($transaction, "transactionIndex");
+        $this->transactionInfo->transactionIndex = (string)hexdec(Arr::get($transaction, "transactionIndex") ?? "");
         $this->transactionInfo->type = Arr::get($transaction, "type");
         $this->transactionInfo->contractAddress = Arr::get($transaction, "contractAddress");
         return $this;

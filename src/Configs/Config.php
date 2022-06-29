@@ -2,10 +2,10 @@
 
 namespace Igor360\UniswapV2Connector\Configs;
 
-use Igor360\UniswapV2Connector\Interfaces\IConfig;
+use Igor360\UniswapV2Connector\Interfaces\ConfigInterface;
 use Illuminate\Support\Arr;
 
-abstract class Config implements IConfig
+abstract class Config implements ConfigInterface
 {
     public static function get(string $key, $default = null)
     {

@@ -2,7 +2,7 @@
 
 namespace Igor360\UniswapV2Connector\Interfaces;
 
-interface IConfig
+interface ConfigInterface
 {
     public const DATE_FORMAT = "d-m-Y H:i:s";
 

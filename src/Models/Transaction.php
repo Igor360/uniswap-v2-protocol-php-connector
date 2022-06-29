@@ -6,7 +6,7 @@ class Transaction
 {
     public string $hash;
 
-    public bool $status;
+    public ?bool $status;
 
     public string $from;
 
@@ -26,15 +26,15 @@ class Transaction
 
     public string $gasPrice;
 
-    public string $gasUsed;
+    public ?string $gasUsed;
 
-    public string $cumulativeGasUsed;
+    public ?string $cumulativeGasUsed;
 
-    public string $contractAddress;
+    public ?string $contractAddress;
 
-    public string $type;
+    public ?string $type;
 
-    public string $transactionIndex;
+    public ?string $transactionIndex;
 
     public string $r;
 
@@ -42,8 +42,8 @@ class Transaction
 
     public string $v;
 
-    public string $logsBloom;
+    public ?string $logsBloom;
 
-    public array $logs;
+    public ?array $logs;
 }
 
