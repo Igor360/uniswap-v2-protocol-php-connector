@@ -12,9 +12,6 @@ class TransactionTokenService extends TransactionService
 
     private TokenService $tokenService;
 
-    private array $d;
-
-
     /**
      * @param TokenService $tokenService
      */

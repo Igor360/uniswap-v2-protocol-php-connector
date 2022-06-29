@@ -2,13 +2,15 @@
 
 namespace Igor360\UniswapV2Connector\Services;
 
-use Igor360\UniswapV2Connector\Interfaces\ITransactions;
+use Igor360\UniswapV2Connector\Interfaces\TransactionSwapInterface;
+use Igor360\UniswapV2Connector\Utils\ClassUtils;
 
 class TransactionSwapService extends TransactionService
 {
+    use ClassUtils;
+
     public function getConstants(): array
     {
-        $constantStorage = new \ReflectionClass(ITransactions::class);
-        return $constantStorage->getConstants();
+        return $this->getClassConstants(TransactionSwapInterface::class);
     }
 }
