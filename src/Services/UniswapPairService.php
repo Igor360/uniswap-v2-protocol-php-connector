@@ -207,4 +207,10 @@ class UniswapPairService
 
         return $this->contract->getNoncesByAddress($this->contractAddress, $address);
     }
+
+    public function getFunctionSelector(string $name): string
+    {
+        return $this->contract->getMethodSelector($name);
+    }
+
 }

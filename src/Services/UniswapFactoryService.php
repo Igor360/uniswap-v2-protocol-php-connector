@@ -78,7 +78,7 @@ class UniswapFactoryService
         return $this;
     }
 
-    public function getPairs(int $from = 0, int $elements = 15): array
+    public function getPairs(int $elements = 15, int $from = 0): array
     {
         $pairs = [];
         for ($i = $from; $elements > $i - $from; $i++) {

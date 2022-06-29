@@ -57,5 +57,18 @@ interface ITransactions
     //swapETHForExactTokens(uint256 amountOut, address[] path, address to, uint256 deadline)
     public const SWAP_ETH_FOR_EXACT_TOKENS_METHOD_ID = "0xfb3bdb41";
 
+    //removeLiquidityETHSupportingFeeOnTransferTokens(address,uint256,uint256,uint256,address,uint256)
+    public const  REMOVE_LIQUIDITY_ETH_SUPPORTING_FEE_ON_TRANSFER_TOKENS_METHOD_ID = "0xaf2979eb";
 
+    //swapExactETHForTokensSupportingFeeOnTransferTokens(uint256,address[],address,uint256)
+    public const SWAP_EXACT_ETH_FOR_TOKENS_SUPPORTING_FEE_ON_TRANSFER_TOKENS_METHOD_ID = "0xb6f9de95";
+
+    //removeLiquidity(address,address,uint256,uint256,uint256,address,uint256)
+    public const REMOVE_LIQUIDITY_METHOD_ID = "0xbaa2abde";
+
+    //removeLiquidityETH(address,uint256,uint256,uint256,address,uint256)
+    public const REMOVE_LIQUIDITY_ETH_METHOD_ID = "0x02751cec";
+
+    //removeLiquidityETHWithPermit(address,uint256,uint256,uint256,address,uint256,bool,uint8,bytes32,bytes32)
+    public const REMOVE_LIQUIDITY_ETH_WITH_PERMIT_METHOD_ID = "0xded9382a";
 }

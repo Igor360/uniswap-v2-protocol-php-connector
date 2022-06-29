@@ -138,6 +138,25 @@ class ABIService
     }
 
     /**
+     * @param string $name
+     * @return string
+     */
+    public function generateMethodSelector(string $name) {
+        $method = $this->functions[$name] ?? null;
+        $methodParams = $method->inputs;
+        $methodParamsCount = is_array($methodParams) ? count($methodParams) : 0;
+        $methodParamsTypes = [];
+        for ($i = 0; $i < $methodParamsCount; $i++) {
+            $param = $methodParams[$i];
+            $methodParamsTypes[] = $param->type;
+        }
+        $str = sprintf('%s(%s)', $method->name, implode(",", $methodParamsTypes));
+        var_dump($str);
+        $encodedMethodCall = Keccak::hash($str, 256);
+        return '0x' . substr($encodedMethodCall, 0, 8);
+    }
+
+    /**
      * @param string $type
      * @param $value
      * @return string

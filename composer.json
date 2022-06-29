@@ -42,7 +42,8 @@
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit"
+        "test": "vendor/bin/phpunit",
+        "generateDoc": " phpDocumentor -d . -t docs/api"
     },
     "config": {
         "sort-packages": true

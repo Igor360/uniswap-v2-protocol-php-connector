@@ -99,4 +99,9 @@ class UniswapRouteService
     {
         return $this->contract->getQuote($this->contractAddress, $amountA, $reserveA, $reserveB);
     }
+
+    public function getFunctionSelector(string $name): string
+    {
+        return $this->contract->getMethodSelector($name);
+    }
 }

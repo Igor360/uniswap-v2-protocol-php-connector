@@ -76,4 +76,9 @@ class TokenService
     {
         return $this->contract->allowance($this->contractAddress, $owner, $spender);
     }
+
+    public function getFunctionSelector(string $name): string
+    {
+        return $this->contract->getMethodSelector($name);
+    }
 }

@@ -26,4 +26,8 @@ interface ERROR_MESSAGES
     public const STATIC_CALL = "Only call static functions";
 
     public const INVALID_CONSTANT_NAME = "Getting constant not exist in class";
+
+    public const CONTRACT = "Invalid contract";
+
+    public const TRANSACTION = "Invalid transaction";
 }
