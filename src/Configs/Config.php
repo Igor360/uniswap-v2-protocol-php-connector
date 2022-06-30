@@ -37,6 +37,11 @@ abstract class Config implements ConfigInterface
         return trim(file_get_contents(__DIR__ . '/../../config/abis/erc20.json'));
     }
 
+    public static function loadERC20V2ABI(): string
+    {
+        return trim(file_get_contents(__DIR__ . '/../../config/abis/erc20_2.json'));
+    }
+
     public static function loadERC721ABI(): string
     {
         return trim(file_get_contents(__DIR__ . '/../../config/abis/erc721.json'));

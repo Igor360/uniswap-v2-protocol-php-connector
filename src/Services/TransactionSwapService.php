@@ -2,15 +2,28 @@
 
 namespace Igor360\UniswapV2Connector\Services;
 
+use Igor360\UniswapV2Connector\Interfaces\TransactionDecodeInterface;
 use Igor360\UniswapV2Connector\Interfaces\TransactionSwapInterface;
 use Igor360\UniswapV2Connector\Utils\ClassUtils;
 
-class TransactionSwapService extends TransactionService
+class TransactionSwapService extends TransactionService implements TransactionDecodeInterface
 {
     use ClassUtils;
 
-    public function getConstants(): array
+    public function constantStorageClass(): string
     {
-        return $this->getClassConstants(TransactionSwapInterface::class);
+        return TransactionSwapInterface::class;
     }
+
+    public function decode(): void
+    {
+        // TODO: Implement decode() method.
+    }
+
+    public function validate(): void
+    {
+        // TODO: Implement validate() method.
+    }
+
+
 }

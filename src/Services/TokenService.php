@@ -35,6 +35,14 @@ class TokenService
     }
 
     /**
+     * @return ERC20Contract|ContractService
+     */
+    public function getContract()
+    {
+        return $this->contract;
+    }
+
+    /**
      * @param string|null $contractAddress
      * @return TokenService
      */
@@ -77,7 +85,7 @@ class TokenService
         return $this->contract->allowance($this->contractAddress, $owner, $spender);
     }
 
-    public function getFunctionSelector(string $name): string
+    public function getFunctionSelector(string $name): array
     {
         return $this->contract->getMethodSelector($name);
     }

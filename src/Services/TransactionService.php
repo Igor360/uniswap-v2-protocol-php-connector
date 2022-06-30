@@ -9,7 +9,7 @@ use Illuminate\Support\Arr;
 
 class TransactionService
 {
-    private string $transactionAddress;
+    private ?string $transactionAddress;
 
     private EthereumService $rpc;
 
@@ -19,12 +19,19 @@ class TransactionService
      * @param string $transactionAddress
      * @param ConnectionInterface $credentials
      */
-    public function __construct(string $transactionAddress, ConnectionInterface $credentials)
+    public function __construct(?string $transactionAddress, ConnectionInterface $credentials)
     {
         $this->transactionAddress = $transactionAddress;
         $this->rpc = new EthereumService($credentials);
         $this->transactionInfo = new Transaction();
-        $this
+        if (!is_null($transactionAddress)) {
+            $this->loadTransactionInstance();
+        }
+    }
+
+    public function loadTransactionInstance(): self
+    {
+        return $this
             ->loadTransaction()
             ->loadLogs();
     }
@@ -81,8 +88,15 @@ class TransactionService
 
     protected function isContract(): void
     {
-        if (is_null($this->transactionInfo->data)) {
+        if (!is_null($this->transactionAddress) && is_null($this->transactionInfo->data)) {
             throw new TransactionException("It's not contract transaction");
+        }
+    }
+
+    protected function checkSettingTxHash(): void
+    {
+        if (is_null($this->transactionAddress)) {
+            throw new TransactionException("Hash is not set");
         }
     }
 

@@ -3,6 +3,7 @@
 namespace Igor360\UniswapV2Connector\Contracts;
 
 use Igor360\UniswapV2Connector\Configs\ConfigFacade as Config;
+use Igor360\UniswapV2Connector\Exceptions\GethException;
 use Igor360\UniswapV2Connector\Services\ContractService;
 use Illuminate\Support\Arr;
 
@@ -54,10 +55,14 @@ class ERC20Contract extends ContractService
         return Arr::first($this->callContractFunction($contractAddress, "name"));
     }
 
-    public function owner(string $contractAddress): string
+    public function owner(string $contractAddress): ?string
     {
         $this->validateAddress($contractAddress);
-        return Arr::first($this->callContractFunction($contractAddress, "owner"));
+        try {
+            return Arr::first($this->callContractFunction($contractAddress, "owner"));
+        } catch (GethException $exception) {
+            return null;
+        }
     }
 
     public function symbol(string $contractAddress): string

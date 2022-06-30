@@ -14,5 +14,5 @@ class Token
 
     public string $totalSupply;
 
-    public string $owner;
+    public ?string $owner; // It's not required field can be null, not all contract to realize this functionality
 }

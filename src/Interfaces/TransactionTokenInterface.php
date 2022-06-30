@@ -8,11 +8,13 @@ namespace Igor360\UniswapV2Connector\Interfaces;
 interface TransactionTokenInterface
 {
     //approve(address,uint256)
-    public const APPROVE_TOKEN_METHOD_ID = "0x095ea7b3";
+    public const APPROVE_TOKENS_METHOD_ID = "0x095ea7b3";
 
     //transfer(address,uint256)
-    public const TRANSFER_TOKEN_METHOD_ID = "0xa9059cbb";
+    public const TRANSFER_TOKENS_METHOD_ID = "0xa9059cbb";
 
     //transferFrom(address,address,uint256)
-    public const TRANSFER_FROM_TOKEN_METHOD_ID = "0x23b872dd";
+    public const TRANSFER_FROM_TOKENS_METHOD_ID = "0x23b872dd";
+
+
 }

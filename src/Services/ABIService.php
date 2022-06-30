@@ -4,12 +4,14 @@ namespace Igor360\UniswapV2Connector\Services;
 
 use Igor360\UniswapV2Connector\Exceptions\ContractABIException;
 use Igor360\UniswapV2Connector\Services\DataTypes\ASCII;
+use Igor360\UniswapV2Connector\Services\DataTypes\Event;
 use Igor360\UniswapV2Connector\Services\DataTypes\Integers;
 use Igor360\UniswapV2Connector\Services\DataTypes\Keccak;
 use Igor360\UniswapV2Connector\Services\DataTypes\Method;
 use Igor360\UniswapV2Connector\Services\DataTypes\MethodParam;
 
 // TODO: REFACTOR THIS BAD CODE
+
 /**
  * @source https://github.com/digitaldonkey/ethereum-php
  */
@@ -74,7 +76,14 @@ class ABIService
                         }
                         break;
                     case "event":
-                        // Todo: parse events
+                        break;
+                        foreach ($this->abi as $item) {
+                            if (isset($item->type)
+                                && $item->type === 'event'
+                            ) {
+                                $this->events[] = new Event($item);
+                            }
+                        }
                         break;
                     default:
                         throw new ContractABIException(
@@ -141,7 +150,8 @@ class ABIService
      * @param string $name
      * @return string
      */
-    public function generateMethodSelector(string $name) {
+    public function generateMethodSelector(string $name): array
+    {
         $method = $this->functions[$name] ?? null;
         $methodParams = $method->inputs;
         $methodParamsCount = is_array($methodParams) ? count($methodParams) : 0;
@@ -150,10 +160,10 @@ class ABIService
             $param = $methodParams[$i];
             $methodParamsTypes[] = $param->type;
         }
-        $str = sprintf('%s(%s)', $method->name, implode(",", $methodParamsTypes));
-        var_dump($str);
-        $encodedMethodCall = Keccak::hash($str, 256);
-        return '0x' . substr($encodedMethodCall, 0, 8);
+        $function = sprintf('%s(%s)', $method->name, implode(",", $methodParamsTypes));
+        $encodedMethodCall = Keccak::hash($function, 256);
+        $hash = '0x' . substr($encodedMethodCall, 0, 8);
+        return compact('function', 'hash');
     }
 
     /**

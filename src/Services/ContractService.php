@@ -50,7 +50,7 @@ abstract class ContractService extends EthereumService
         return $this->ABIService->decodeResponse($function, $response);
     }
 
-    public function getMethodSelector(string $functionName): string
+    public function getMethodSelector(string $functionName): array
     {
         return $this->ABIService->generateMethodSelector($functionName);
     }

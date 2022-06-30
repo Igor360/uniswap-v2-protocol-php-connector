@@ -60,6 +60,14 @@ class UniswapFactoryService
     }
 
     /**
+     * @return UniswapFactory|ContractService
+     */
+    public function getContract()
+    {
+        return $this->contract;
+    }
+
+    /**
      * @param string|null $contractAddress
      * @return UniswapFactoryService
      */

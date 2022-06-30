@@ -45,5 +45,7 @@ class Transaction
     public ?string $logsBloom;
 
     public ?array $logs;
+
+    public ?ContractCallInfo $callInfo;
 }
 
