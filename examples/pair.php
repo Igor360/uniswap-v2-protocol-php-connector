@@ -17,7 +17,4 @@ var_dump($pairService->getPairInfoJson());
 // Get pair info with tokens
 
 
-$pairService->loadToken0Info();
-$pairService->loadToken1Info();
-
-var_dump($pairService->getPairInfoJson());
+var_dump($pairService->loadTokensInfo()->getPairInfoJson());

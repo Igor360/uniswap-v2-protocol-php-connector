@@ -64,4 +64,9 @@ trait PairLib
         //min_tokens = int(amount_out * (1 - (slippage / 100)))
         return bcmul($amount, bcsub("1", bcdiv($this->SLIPPAGE, "100", $math->scale()), $math->scale()), $math->scale());
     }
+
+    public function toFormat(string $amount, string $denominator): string
+    {
+        return bcdiv($amount, $denominator, strlen((string)$denominator));
+    }
 }

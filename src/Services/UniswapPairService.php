@@ -160,10 +160,30 @@ class UniswapPairService
         $this->pairInfo->price0CumulativeLast = $this->contract->getPrice0CumulativeLast($this->contractAddress);
         $this->pairInfo->price1CumulativeLast = $this->contract->getPrice1CumulativeLast($this->contractAddress);
 
-        $amount = (string)10**18;
-        var_dump($amount);
-        $this->pairInfo->priceToken0toToken1 = $this->getAmountOut($amount, $this->pairInfo->reserve0, $this->pairInfo->reserve1, $this->math);
-        $this->pairInfo->priceToken1toToken0 = $this->getAmountOut($amount, $this->pairInfo->reserve1, $this->pairInfo->reserve0, $this->math);
+        $this->updatePrices();
+        return $this;
+    }
+
+    public function updatePrices(): self
+    {
+        $decimalsToken0 = (int)($this->pairInfo->token0Info->decimals ?? 18);
+        $amountToken0 = (string)(10 ** $decimalsToken0);
+        $this->pairInfo->priceToken0toToken1 = $this->getAmountOut($amountToken0, $this->pairInfo->reserve0, $this->pairInfo->reserve1, $this->math);
+        $this->pairInfo->priceToken0toToken1 = $this->toFormat($this->pairInfo->priceToken0toToken1, $amountToken0);
+
+        $decimalsToken1 = (int)($this->pairInfo->token1Info->decimals ?? 18);
+        $amountToken1 = (string)(10 ** $decimalsToken1);
+        $this->pairInfo->priceToken1toToken0 = $this->getAmountOut($amountToken1, $this->pairInfo->reserve1, $this->pairInfo->reserve0, $this->math);
+        $this->pairInfo->priceToken1toToken0 = $this->toFormat($this->pairInfo->priceToken1toToken0, $amountToken1);
+
+        return $this;
+    }
+
+    public function loadTokensInfo(): self
+    {
+        $this->loadToken0Info();
+        $this->loadToken1Info();
+        $this->updatePrices();
         return $this;
     }
 

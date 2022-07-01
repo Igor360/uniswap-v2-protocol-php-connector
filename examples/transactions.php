@@ -17,13 +17,13 @@ $txSwapService = new \Igor360\UniswapV2Connector\Services\TransactionService($ha
 var_dump($txSwapService->getTransactionInfo());
 
 // Swap tx decode
-//
-//$hash = "0x79774e1753e925ccfcbc3091d5e6c66fa052becb988d3893574340c24fe51d1c";
-//
-//$service = new \Igor360\UniswapV2Connector\Services\TransactionSwapService($hash, $credentials);
-//
-//var_dump($service->getTransactionInfo()->callInfo);
-//
-//$service->setTransactionHash("0xe864ca685aa915302f98a7d758b5a9c7a410ef54b3bc0b2235dc5379ef7241f5");
-//
-//var_dump($service->getTransactionInfo()->callInfo);
+
+$hash = "0x79774e1753e925ccfcbc3091d5e6c66fa052becb988d3893574340c24fe51d1c";
+
+$service = new \Igor360\UniswapV2Connector\Services\TransactionSwapService($hash, $credentials);
+
+var_dump($service->getTransactionInfo()->callInfo);
+
+$service->setTransactionHash("0xe864ca685aa915302f98a7d758b5a9c7a410ef54b3bc0b2235dc5379ef7241f5");
+
+var_dump($service->getTransactionInfo()->callInfo);
