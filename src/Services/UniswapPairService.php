@@ -12,12 +12,14 @@ use Igor360\UniswapV2Connector\Models\Pair;
 use Igor360\UniswapV2Connector\Models\Token;
 use Igor360\UniswapV2Connector\Utils\DateTimeConvert;
 use Igor360\UniswapV2Connector\Utils\PairLib;
+use Igor360\UniswapV2Connector\Utils\WeiUtils;
 use Illuminate\Support\Arr;
 
 class UniswapPairService
 {
     use DateTimeConvert;
     use PairLib;
+    use WeiUtils;
 
     private ?string $contractAddress;
 
@@ -158,8 +160,10 @@ class UniswapPairService
         $this->pairInfo->price0CumulativeLast = $this->contract->getPrice0CumulativeLast($this->contractAddress);
         $this->pairInfo->price1CumulativeLast = $this->contract->getPrice1CumulativeLast($this->contractAddress);
 
-        $this->pairInfo->priceToken0toToken1 = $this->getAmountOut("1", $this->pairInfo->reserve0, $this->pairInfo->reserve1, $this->math);
-        $this->pairInfo->priceToken1toToken0 = $this->getAmountOut("1", $this->pairInfo->reserve1, $this->pairInfo->reserve0, $this->math);
+        $amount = (string)10**18;
+        var_dump($amount);
+        $this->pairInfo->priceToken0toToken1 = $this->getAmountOut($amount, $this->pairInfo->reserve0, $this->pairInfo->reserve1, $this->math);
+        $this->pairInfo->priceToken1toToken0 = $this->getAmountOut($amount, $this->pairInfo->reserve1, $this->pairInfo->reserve0, $this->math);
         return $this;
     }
 

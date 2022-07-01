@@ -57,8 +57,9 @@ class TransactionService
 
     public function loadLogs(): self
     {
+
         $transaction = $this->rpc->getTransactionReceipt($this->transactionAddress);
-        $this->transactionInfo->status = Arr::get($transaction, "status") === "0x01";
+        $this->transactionInfo->status = (bool)hexdec(Arr::get($transaction, "status", "0x0"));
         $this->transactionInfo->logsBloom = Arr::get($transaction, "logsBloom");
         $this->transactionInfo->cumulativeGasUsed = (string)hexdec(Arr::get($transaction, "cumulativeGasUsed") ?? "");
         $this->transactionInfo->gasUsed = (string)hexdec(Arr::get($transaction, "gasUsed") ?? "");

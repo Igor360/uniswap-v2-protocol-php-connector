@@ -8,6 +8,6 @@ class Math implements MathInterface
 {
     public function scale(): int
     {
-        return 18;
+        return 0;
     }
 }
