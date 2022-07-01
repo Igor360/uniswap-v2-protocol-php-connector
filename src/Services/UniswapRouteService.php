@@ -113,4 +113,8 @@ class UniswapRouteService
         return $this->contract;
     }
 
+    public function getEventsTopics(): array
+    {
+        return $this->contract->getEventsTopics() ?? [];
+    }
 }

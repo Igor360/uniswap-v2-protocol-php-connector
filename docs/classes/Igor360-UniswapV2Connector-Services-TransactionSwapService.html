@@ -129,13 +129,19 @@
                             </ul>
         </div>
     
+            <span class="phpdocumentor-element__implements">
+            implements
+                            <a href="classes/Igor360-UniswapV2Connector-Interfaces-TransactionDecodeInterface.html"><abbr title="\Igor360\UniswapV2Connector\Interfaces\TransactionDecodeInterface">TransactionDecodeInterface</abbr></a>                    </span>
     
+            <span class="phpdocumentor-element__extends">
+            Uses
+                            <a href="classes/Igor360-UniswapV2Connector-Utils-ClassUtils.html"><abbr title="\Igor360\UniswapV2Connector\Utils\ClassUtils">ClassUtils</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionSwapService.php"><a href="files/src-services-transactionswapservice.html"><abbr title="src/Services/TransactionSwapService.php">TransactionSwapService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">7</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 
     </aside>
 
@@ -147,6 +153,18 @@
 
 
 
+<h3 id="interfaces_class_traits">
+    Interfaces, Classes, Traits and Enums
+    <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
+</h3>
+
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/Igor360-UniswapV2Connector-Interfaces-TransactionDecodeInterface.html"><abbr title="\Igor360\UniswapV2Connector\Interfaces\TransactionDecodeInterface">TransactionDecodeInterface</abbr></a></dt>
+        <dd>Interface for factory to call decode function for decode transaction</dd>
+    
+    
+    
+    </dl>
 
 
 <h3 id="toc">
@@ -156,9 +174,30 @@
 
 <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionService.html#property_transactionAddress">$transactionAddress</a>
+    <span>
+                        &nbsp;: string|null            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Igor360-UniswapV2Connector-Services-TransactionService.html#property_transactionInfo">$transactionInfo</a>
     <span>
                         &nbsp;: <a href="classes/Igor360-UniswapV2Connector-Models-Transaction.html"><abbr title="\Igor360\UniswapV2Connector\Models\Transaction">Transaction</abbr></a>            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#property_factoryService">$factoryService</a>
+    <span>
+                        &nbsp;: <a href="classes/Igor360-UniswapV2Connector-Services-UniswapFactoryService.html"><abbr title="\Igor360\UniswapV2Connector\Services\UniswapFactoryService">UniswapFactoryService</abbr></a>            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#property_pairService">$pairService</a>
+    <span>
+                        &nbsp;: <a href="classes/Igor360-UniswapV2Connector-Services-UniswapPairService.html"><abbr title="\Igor360\UniswapV2Connector\Services\UniswapPairService">UniswapPairService</abbr></a>            </span>
 </dt>
 <dd></dd>
 
@@ -170,23 +209,100 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionService.html#property_transactionAddress">$transactionAddress</a>
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#property_transactionHash">$transactionHash</a>
     <span>
-                        &nbsp;: string            </span>
+                        &nbsp;: string|null            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#property_uniswapRouteService">$uniswapRouteService</a>
+    <span>
+                        &nbsp;: <a href="classes/Igor360-UniswapV2Connector-Services-UniswapRouteService.html"><abbr title="\Igor360\UniswapV2Connector\Services\UniswapRouteService">UniswapRouteService</abbr></a>            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#property_validated">$validated</a>
+    <span>
+                        &nbsp;: bool            </span>
 </dt>
 <dd></dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionService.html#method___construct">__construct()</a>
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_getConstants">getConstants()</a>
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_constantStorageClass">constantStorageClass()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_decode">decode()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_decodeTransactionArgs">decodeTransactionArgs()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_decodeTransactionLogs">decodeTransactionLogs()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Igor360-UniswapV2Connector-Utils-ClassUtils.html#method_getConstants">getConstants()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_getContractFunctionId">getContractFunctionId()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_getEventsTopics">getEventsTopics()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_getMethodType">getMethodType()</a>
+    <span>
+                                &nbsp;: string|null    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_getMethodTypes">getMethodTypes()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_getTransactionHash">getTransactionHash()</a>
+    <span>
+                                &nbsp;: string|null    </span>
 </dt>
 <dd></dd>
 
@@ -205,6 +321,20 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_getUniswapRouteService">getUniswapRouteService()</a>
+    <span>
+                                &nbsp;: <a href="classes/Igor360-UniswapV2Connector-Services-UniswapRouteService.html"><abbr title="\Igor360\UniswapV2Connector\Services\UniswapRouteService">UniswapRouteService</abbr></a>    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_isValidated">isValidated()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Igor360-UniswapV2Connector-Services-TransactionService.html#method_loadLogs">loadLogs()</a>
     <span>
                                 &nbsp;: self    </span>
@@ -215,6 +345,41 @@
     <a href="classes/Igor360-UniswapV2Connector-Services-TransactionService.html#method_loadTransaction">loadTransaction()</a>
     <span>
                                 &nbsp;: self    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionService.html#method_loadTransactionInstance">loadTransactionInstance()</a>
+    <span>
+                                &nbsp;: self    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_setTransactionHash">setTransactionHash()</a>
+    <span>
+                                &nbsp;: <a href="classes/Igor360-UniswapV2Connector-Services-TransactionTokenService.html"><abbr title="\Igor360\UniswapV2Connector\Services\TransactionTokenService">TransactionTokenService</abbr></a>    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_updateServices">updateServices()</a>
+    <span>
+                                &nbsp;: self    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_validate">validate()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Igor360-UniswapV2Connector-Services-TransactionService.html#method_checkSettingTxHash">checkSettingTxHash()</a>
+    <span>
+                                &nbsp;: void    </span>
 </dt>
 <dd></dd>
 
@@ -244,6 +409,40 @@
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_transactionAddress">
+        $transactionAddress
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionService.html#property_transactionAddress" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionService.php"><a href="files/src-services-transactionservice.html"><abbr title="src/Services/TransactionService.php">TransactionService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">12</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
+    <span class="phpdocumentor-signature__name">$transactionAddress</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_transactionInfo">
         $transactionInfo
         <a href="classes/Igor360-UniswapV2Connector-Services-TransactionService.html#property_transactionInfo" class="headerlink"><i class="fas fa-link"></i></a>
@@ -262,6 +461,74 @@
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type"><a href="classes/Igor360-UniswapV2Connector-Models-Transaction.html"><abbr title="\Igor360\UniswapV2Connector\Models\Transaction">Transaction</abbr></a></span>
     <span class="phpdocumentor-signature__name">$transactionInfo</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_factoryService">
+        $factoryService
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#property_factoryService" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionSwapService.php"><a href="files/src-services-transactionswapservice.html"><abbr title="src/Services/TransactionSwapService.php">TransactionSwapService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">24</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/Igor360-UniswapV2Connector-Services-UniswapFactoryService.html"><abbr title="\Igor360\UniswapV2Connector\Services\UniswapFactoryService">UniswapFactoryService</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$factoryService</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_pairService">
+        $pairService
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#property_pairService" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionSwapService.php"><a href="files/src-services-transactionswapservice.html"><abbr title="src/Services/TransactionSwapService.php">TransactionSwapService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">22</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/Igor360-UniswapV2Connector-Services-UniswapPairService.html"><abbr title="\Igor360\UniswapV2Connector\Services\UniswapPairService">UniswapPairService</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$pairService</span>
     </code>
 
         <section class="phpdocumentor-description"></section>
@@ -312,25 +579,93 @@
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_transactionAddress">
-        $transactionAddress
-        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionService.html#property_transactionAddress" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_transactionHash">
+        $transactionHash
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#property_transactionHash" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionService.php"><a href="files/src-services-transactionservice.html"><abbr title="src/Services/TransactionService.php">TransactionService.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionSwapService.php"><a href="files/src-services-transactionswapservice.html"><abbr title="src/Services/TransactionSwapService.php">TransactionSwapService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$transactionAddress</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
+    <span class="phpdocumentor-signature__name">$transactionHash</span>
     </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_uniswapRouteService">
+        $uniswapRouteService
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#property_uniswapRouteService" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionSwapService.php"><a href="files/src-services-transactionswapservice.html"><abbr title="src/Services/TransactionSwapService.php">TransactionSwapService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">20</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/Igor360-UniswapV2Connector-Services-UniswapRouteService.html"><abbr title="\Igor360\UniswapV2Connector\Services\UniswapRouteService">UniswapRouteService</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$uniswapRouteService</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_validated">
+        $validated
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#property_validated" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionSwapService.php"><a href="files/src-services-transactionswapservice.html"><abbr title="src/Services/TransactionSwapService.php">TransactionSwapService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">26</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$validated</span>
+     = <span class="phpdocumentor-signature__default-value">false</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -354,26 +689,26 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionService.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionService.php"><a href="files/src-services-transactionservice.html"><abbr title="src/Services/TransactionService.php">TransactionService.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionSwapService.php"><a href="files/src-services-transactionswapservice.html"><abbr title="src/Services/TransactionSwapService.php">TransactionSwapService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$transactionAddress</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Igor360-UniswapV2Connector-Interfaces-ConnectionInterface.html"><abbr title="\Igor360\UniswapV2Connector\Interfaces\ConnectionInterface">ConnectionInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$credentials</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$transactionHash</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Igor360-UniswapV2Connector-Interfaces-ConnectionInterface.html"><abbr title="\Igor360\UniswapV2Connector\Interfaces\ConnectionInterface">ConnectionInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$credentials</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$transactionAddress</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                <span class="phpdocumentor-signature__argument__name">$transactionHash</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -401,14 +736,146 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getConstants">
-        getConstants()
-        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_getConstants" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_constantStorageClass">
+        constantStorageClass()
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_constantStorageClass" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionSwapService.php"><a href="files/src-services-transactionswapservice.html"><abbr title="src/Services/TransactionSwapService.php">TransactionSwapService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">76</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">constantStorageClass</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_decode">
+        decode()
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_decode" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionSwapService.php"><a href="files/src-services-transactionswapservice.html"><abbr title="src/Services/TransactionSwapService.php">TransactionSwapService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">113</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">decode</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_decodeTransactionArgs">
+        decodeTransactionArgs()
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_decodeTransactionArgs" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionSwapService.php"><a href="files/src-services-transactionswapservice.html"><abbr title="src/Services/TransactionSwapService.php">TransactionSwapService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">157</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">decodeTransactionArgs</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_decodeTransactionLogs">
+        decodeTransactionLogs()
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_decodeTransactionLogs" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionSwapService.php"><a href="files/src-services-transactionswapservice.html"><abbr title="src/Services/TransactionSwapService.php">TransactionSwapService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">130</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">decodeTransactionLogs</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getConstants">
+        getConstants()
+        <a href="classes/Igor360-UniswapV2Connector-Utils-ClassUtils.html#method_getConstants" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Utils/ClassUtils.php"><a href="files/src-utils-classutils.html"><abbr title="src/Utils/ClassUtils.php">ClassUtils.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">7</span>
 
     </aside>
 
@@ -434,6 +901,170 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getContractFunctionId">
+        getContractFunctionId()
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_getContractFunctionId" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionSwapService.php"><a href="files/src-services-transactionswapservice.html"><abbr title="src/Services/TransactionSwapService.php">TransactionSwapService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">81</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getContractFunctionId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getEventsTopics">
+        getEventsTopics()
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_getEventsTopics" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionSwapService.php"><a href="files/src-services-transactionswapservice.html"><abbr title="src/Services/TransactionSwapService.php">TransactionSwapService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">125</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getEventsTopics</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getMethodType">
+        getMethodType()
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_getMethodType" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionSwapService.php"><a href="files/src-services-transactionswapservice.html"><abbr title="src/Services/TransactionSwapService.php">TransactionSwapService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">108</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getMethodType</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string|null</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getMethodTypes">
+        getMethodTypes()
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_getMethodTypes" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionSwapService.php"><a href="files/src-services-transactionswapservice.html"><abbr title="src/Services/TransactionSwapService.php">TransactionSwapService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">103</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getMethodTypes</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getTransactionHash">
+        getTransactionHash()
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_getTransactionHash" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionSwapService.php"><a href="files/src-services-transactionswapservice.html"><abbr title="src/Services/TransactionSwapService.php">TransactionSwapService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">59</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getTransactionHash</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string|null</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getTransactionInfo">
         getTransactionInfo()
         <a href="classes/Igor360-UniswapV2Connector-Services-TransactionService.html#method_getTransactionInfo" class="headerlink"><i class="fas fa-link"></i></a>
@@ -441,7 +1072,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionService.php"><a href="files/src-services-transactionservice.html"><abbr title="src/Services/TransactionService.php">TransactionService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">68</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 
     </aside>
 
@@ -473,7 +1104,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionService.php"><a href="files/src-services-transactionservice.html"><abbr title="src/Services/TransactionService.php">TransactionService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">84</span>
 
     </aside>
 
@@ -512,6 +1143,71 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getUniswapRouteService">
+        getUniswapRouteService()
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_getUniswapRouteService" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionSwapService.php"><a href="files/src-services-transactionswapservice.html"><abbr title="src/Services/TransactionSwapService.php">TransactionSwapService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">51</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getUniswapRouteService</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Igor360-UniswapV2Connector-Services-UniswapRouteService.html"><abbr title="\Igor360\UniswapV2Connector\Services\UniswapRouteService">UniswapRouteService</abbr></a></span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Igor360-UniswapV2Connector-Services-UniswapRouteService.html"><abbr title="\Igor360\UniswapV2Connector\Services\UniswapRouteService">UniswapRouteService</abbr></a></span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_isValidated">
+        isValidated()
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_isValidated" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionSwapService.php"><a href="files/src-services-transactionswapservice.html"><abbr title="src/Services/TransactionSwapService.php">TransactionSwapService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">98</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">isValidated</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_loadLogs">
         loadLogs()
         <a href="classes/Igor360-UniswapV2Connector-Services-TransactionService.html#method_loadLogs" class="headerlink"><i class="fas fa-link"></i></a>
@@ -519,7 +1215,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionService.php"><a href="files/src-services-transactionservice.html"><abbr title="src/Services/TransactionService.php">TransactionService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
 
     </aside>
 
@@ -552,7 +1248,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionService.php"><a href="files/src-services-transactionservice.html"><abbr title="src/Services/TransactionService.php">TransactionService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">32</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 
     </aside>
 
@@ -575,6 +1271,180 @@
                     <article
         class="phpdocumentor-element
             -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_loadTransactionInstance">
+        loadTransactionInstance()
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionService.html#method_loadTransactionInstance" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionService.php"><a href="files/src-services-transactionservice.html"><abbr title="src/Services/TransactionService.php">TransactionService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">32</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">loadTransactionInstance</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">self</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setTransactionHash">
+        setTransactionHash()
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_setTransactionHash" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionSwapService.php"><a href="files/src-services-transactionswapservice.html"><abbr title="src/Services/TransactionSwapService.php">TransactionSwapService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">68</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">setTransactionHash</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$transactionHash</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Igor360-UniswapV2Connector-Services-TransactionTokenService.html"><abbr title="\Igor360\UniswapV2Connector\Services\TransactionTokenService">TransactionTokenService</abbr></a></span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$transactionHash</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Igor360-UniswapV2Connector-Services-TransactionTokenService.html"><abbr title="\Igor360\UniswapV2Connector\Services\TransactionTokenService">TransactionTokenService</abbr></a></span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_updateServices">
+        updateServices()
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_updateServices" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionSwapService.php"><a href="files/src-services-transactionswapservice.html"><abbr title="src/Services/TransactionSwapService.php">TransactionSwapService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">42</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">updateServices</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">self</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_validate">
+        validate()
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_validate" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionSwapService.php"><a href="files/src-services-transactionswapservice.html"><abbr title="src/Services/TransactionSwapService.php">TransactionSwapService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">86</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">validate</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_checkSettingTxHash">
+        checkSettingTxHash()
+        <a href="classes/Igor360-UniswapV2Connector-Services-TransactionService.html#method_checkSettingTxHash" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionService.php"><a href="files/src-services-transactionservice.html"><abbr title="src/Services/TransactionService.php">TransactionService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">96</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">checkSettingTxHash</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
             -protected
                                                         "
 >
@@ -585,7 +1455,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/TransactionService.php"><a href="files/src-services-transactionservice.html"><abbr title="src/Services/TransactionService.php">TransactionService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">89</span>
 
     </aside>
 

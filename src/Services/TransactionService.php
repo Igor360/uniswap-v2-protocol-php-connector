@@ -9,7 +9,7 @@ use Illuminate\Support\Arr;
 
 class TransactionService
 {
-    private ?string $transactionAddress;
+    protected ?string $transactionAddress;
 
     private EthereumService $rpc;
 
@@ -99,5 +99,4 @@ class TransactionService
             throw new TransactionException("Hash is not set");
         }
     }
-
 }

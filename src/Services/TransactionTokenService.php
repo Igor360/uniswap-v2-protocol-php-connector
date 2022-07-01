@@ -15,8 +15,6 @@ class TransactionTokenService extends TransactionService implements TransactionD
 {
     use ClassUtils;
 
-    private ?string $transactionHash;
-
     private TokenService $tokenService;
 
     private bool $validated = false;
@@ -30,6 +28,8 @@ class TransactionTokenService extends TransactionService implements TransactionD
         parent::__construct($transactionHash, $credentials);
         $this->isContract();
         $this->tokenService = new TokenService($this->transactionInfo->to ?? null, $credentials);
+        $this->validate();
+        $this->decode();
     }
 
     public function updateServices(): self
@@ -44,25 +44,16 @@ class TransactionTokenService extends TransactionService implements TransactionD
     }
 
     /**
-     * @return string|null
-     */
-    public function getTransactionHash(): ?string
-    {
-        return $this->transactionHash;
-    }
-
-    /**
      * @param string|null $transactionHash
      * @return TransactionTokenService
      */
     public function setTransactionHash(?string $transactionHash): self
     {
-        $this->transactionHash = $transactionHash;
+        $this->transactionAddress = $transactionHash;
         $this->loadTransactionInstance();
         $this->updateServices();
         return $this;
     }
-
 
     public function constantStorageClass(): string
     {
@@ -103,12 +94,44 @@ class TransactionTokenService extends TransactionService implements TransactionD
 
     public function decode(): void
     {
-        if ($this->isValidated()) {
+        if (!$this->isValidated()) {
             throw new TransactionException("Contract transaction is not validated");
         }
         $this->transactionInfo->callInfo = new ContractCallInfo();
         $type = $this->getMethodType();
         $this->transactionInfo->callInfo->type = is_null($type) ? $type : str_replace("_METHOD_ID", "", $type);
-        $this->transactionInfo->callInfo->decodedArgs = $this->tokenService->getContract()->decodeRespose();
+        $this->decodeTransactionArgs();
+        $this->decodeTransactionLogs();
+    }
+
+    public function getEventsTopics(): array
+    {
+        return $this->tokenService->getEventsTopics();
+    }
+
+    public function decodeTransactionLogs(): void
+    {
+        $decodedLogs = [];
+        $logs = $this->transactionInfo->logs ?? [];
+        foreach ($logs as $log) {
+            $topicId = $log["topics"][0] ?? null;
+            if (is_null($topicId)) {
+                continue;
+            }
+            $decodedLogs[] = $this->tokenService->getContract()->decodeContractTransactionLogs($topicId, $log);
+        }
+        $this->transactionInfo->callInfo->decodedLogs = $decodedLogs;
+    }
+
+    public function decodeTransactionArgs(): void
+    {
+        $methodId = $this->getContractFunctionId();
+        $methods = $this->tokenService->getContract()->getMethodSelectors();
+        if (!Arr::has($methods, $methodId)) {
+            throw new TransactionException("Invalid method, method with selector ${methodId} not located in abi");
+        }
+        $functionName = $methods[$methodId] ?? null;
+        $this->transactionInfo->callInfo->function = $functionName;
+        $this->transactionInfo->callInfo->decodedArgs = $this->tokenService->getContract()->decodeContractTransactionArgs($functionName, $this->transactionInfo->data);
     }
 }

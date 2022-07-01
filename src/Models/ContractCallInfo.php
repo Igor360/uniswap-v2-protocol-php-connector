@@ -6,6 +6,8 @@ class ContractCallInfo
 {
     public ?string $type;
 
+    public ?string $function;
+
     public array $decodedArgs;
 
     public array $decodedLogs;

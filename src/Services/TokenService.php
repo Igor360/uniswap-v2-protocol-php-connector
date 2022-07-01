@@ -89,4 +89,9 @@ class TokenService
     {
         return $this->contract->getMethodSelector($name);
     }
+
+    public function getEventsTopics(): array
+    {
+        return $this->contract->getEventsTopics() ?? [];
+    }
 }

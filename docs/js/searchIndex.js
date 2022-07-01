@@ -31,6 +31,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Configs-Config.html#method_loadERC20ABI"
         },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Configs\\Config\u003A\u003AloadERC20V2ABI\u0028\u0029",
+            "name": "loadERC20V2ABI",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Configs-Config.html#method_loadERC20V2ABI"
+        },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Configs\\Config\u003A\u003AloadERC721ABI\u0028\u0029",
             "name": "loadERC721ABI",
             "summary": "",
@@ -986,6 +991,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Models-Transaction.html#property_logs"
         },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Models\\Transaction\u003A\u003A\u0024callInfo",
+            "name": "callInfo",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Models-Transaction.html#property_callInfo"
+        },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Net\\BaseRPCService",
             "name": "BaseRPCService",
             "summary": "Class\u0020BaseRPCService",
@@ -1046,70 +1056,20 @@ Search.appendIndex(
             "summary": "ABI\u0020constructor.",
             "url": "classes/Igor360-UniswapV2Connector-Services-ABIService.html#method___construct"
         },                {
-            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIService\u003A\u003AencodeCall\u0028\u0029",
-            "name": "encodeCall",
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIService\u003A\u003AgetEventsTopics\u0028\u0029",
+            "name": "getEventsTopics",
             "summary": "",
-            "url": "classes/Igor360-UniswapV2Connector-Services-ABIService.html#method_encodeCall"
-        },                {
-            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIService\u003A\u003AgenerateMethodSelector\u0028\u0029",
-            "name": "generateMethodSelector",
-            "summary": "",
-            "url": "classes/Igor360-UniswapV2Connector-Services-ABIService.html#method_generateMethodSelector"
-        },                {
-            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIService\u003A\u003AencodeArg\u0028\u0029",
-            "name": "encodeArg",
-            "summary": "",
-            "url": "classes/Igor360-UniswapV2Connector-Services-ABIService.html#method_encodeArg"
-        },                {
-            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIService\u003A\u003AdecodeResponse\u0028\u0029",
-            "name": "decodeResponse",
-            "summary": "",
-            "url": "classes/Igor360-UniswapV2Connector-Services-ABIService.html#method_decodeResponse"
-        },                {
-            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIService\u003A\u003AdecodeArg\u0028\u0029",
-            "name": "decodeArg",
-            "summary": "",
-            "url": "classes/Igor360-UniswapV2Connector-Services-ABIService.html#method_decodeArg"
-        },                {
-            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIService\u003A\u003AdecodeAddressResponse\u0028\u0029",
-            "name": "decodeAddressResponse",
-            "summary": "",
-            "url": "classes/Igor360-UniswapV2Connector-Services-ABIService.html#method_decodeAddressResponse"
-        },                {
-            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIService\u003A\u003AdecodeArrayValue\u0028\u0029",
-            "name": "decodeArrayValue",
-            "summary": "",
-            "url": "classes/Igor360-UniswapV2Connector-Services-ABIService.html#method_decodeArrayValue"
+            "url": "classes/Igor360-UniswapV2Connector-Services-ABIService.html#method_getEventsTopics"
         },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIService\u003A\u003A\u0024constructor",
             "name": "constructor",
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Services-ABIService.html#property_constructor"
         },                {
-            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIService\u003A\u003A\u0024fallback",
-            "name": "fallback",
-            "summary": "",
-            "url": "classes/Igor360-UniswapV2Connector-Services-ABIService.html#property_fallback"
-        },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIService\u003A\u003A\u0024receive",
             "name": "receive",
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Services-ABIService.html#property_receive"
-        },                {
-            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIService\u003A\u003A\u0024functions",
-            "name": "functions",
-            "summary": "",
-            "url": "classes/Igor360-UniswapV2Connector-Services-ABIService.html#property_functions"
-        },                {
-            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIService\u003A\u003A\u0024events",
-            "name": "events",
-            "summary": "",
-            "url": "classes/Igor360-UniswapV2Connector-Services-ABIService.html#property_events"
-        },                {
-            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIService\u003A\u003A\u0024strictMode",
-            "name": "strictMode",
-            "summary": "",
-            "url": "classes/Igor360-UniswapV2Connector-Services-ABIService.html#property_strictMode"
         },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ContractService",
             "name": "ContractService",
@@ -1145,6 +1105,26 @@ Search.appendIndex(
             "name": "getMethodSelector",
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Services-ContractService.html#method_getMethodSelector"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ContractService\u003A\u003AgetMethodSelectors\u0028\u0029",
+            "name": "getMethodSelectors",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-ContractService.html#method_getMethodSelectors"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ContractService\u003A\u003AgetEventsTopics\u0028\u0029",
+            "name": "getEventsTopics",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-ContractService.html#method_getEventsTopics"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ContractService\u003A\u003AdecodeContractTransactionLogs\u0028\u0029",
+            "name": "decodeContractTransactionLogs",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-ContractService.html#method_decodeContractTransactionLogs"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ContractService\u003A\u003AdecodeContractTransactionArgs\u0028\u0029",
+            "name": "decodeContractTransactionArgs",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-ContractService.html#method_decodeContractTransactionArgs"
         },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ContractService\u003A\u003A\u0024ABIService",
             "name": "ABIService",
@@ -1411,6 +1391,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Services-TokenService.html#method_getContractAddress"
         },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TokenService\u003A\u003AgetContract\u0028\u0029",
+            "name": "getContract",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TokenService.html#method_getContract"
+        },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TokenService\u003A\u003AsetContractAddress\u0028\u0029",
             "name": "setContractAddress",
             "summary": "",
@@ -1446,6 +1431,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Services-TokenService.html#method_getFunctionSelector"
         },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TokenService\u003A\u003AgetEventsTopics\u0028\u0029",
+            "name": "getEventsTopics",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TokenService.html#method_getEventsTopics"
+        },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TokenService\u003A\u003A\u0024contractAddress",
             "name": "contractAddress",
             "summary": "",
@@ -1470,6 +1460,11 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Services-TransactionService.html#method___construct"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionService\u003A\u003AloadTransactionInstance\u0028\u0029",
+            "name": "loadTransactionInstance",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionService.html#method_loadTransactionInstance"
         },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionService\u003A\u003AloadTransaction\u0028\u0029",
             "name": "loadTransaction",
@@ -1496,6 +1491,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Services-TransactionService.html#method_isContract"
         },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionService\u003A\u003AcheckSettingTxHash\u0028\u0029",
+            "name": "checkSettingTxHash",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionService.html#method_checkSettingTxHash"
+        },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionService\u003A\u003A\u0024transactionAddress",
             "name": "transactionAddress",
             "summary": "",
@@ -1516,10 +1516,105 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html"
         },                {
-            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003AgetConstants\u0028\u0029",
-            "name": "getConstants",
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
             "summary": "",
-            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_getConstants"
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method___construct"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003AupdateServices\u0028\u0029",
+            "name": "updateServices",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_updateServices"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003AgetUniswapRouteService\u0028\u0029",
+            "name": "getUniswapRouteService",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_getUniswapRouteService"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003AgetTransactionHash\u0028\u0029",
+            "name": "getTransactionHash",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_getTransactionHash"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003AsetTransactionHash\u0028\u0029",
+            "name": "setTransactionHash",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_setTransactionHash"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003AconstantStorageClass\u0028\u0029",
+            "name": "constantStorageClass",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_constantStorageClass"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003AgetContractFunctionId\u0028\u0029",
+            "name": "getContractFunctionId",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_getContractFunctionId"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003Avalidate\u0028\u0029",
+            "name": "validate",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_validate"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003AisValidated\u0028\u0029",
+            "name": "isValidated",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_isValidated"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003AgetMethodTypes\u0028\u0029",
+            "name": "getMethodTypes",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_getMethodTypes"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003AgetMethodType\u0028\u0029",
+            "name": "getMethodType",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_getMethodType"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003Adecode\u0028\u0029",
+            "name": "decode",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_decode"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003AgetEventsTopics\u0028\u0029",
+            "name": "getEventsTopics",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_getEventsTopics"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003AdecodeTransactionLogs\u0028\u0029",
+            "name": "decodeTransactionLogs",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_decodeTransactionLogs"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003AdecodeTransactionArgs\u0028\u0029",
+            "name": "decodeTransactionArgs",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#method_decodeTransactionArgs"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003A\u0024transactionHash",
+            "name": "transactionHash",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#property_transactionHash"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003A\u0024uniswapRouteService",
+            "name": "uniswapRouteService",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#property_uniswapRouteService"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003A\u0024pairService",
+            "name": "pairService",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#property_pairService"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003A\u0024factoryService",
+            "name": "factoryService",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#property_factoryService"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003A\u0024validated",
+            "name": "validated",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#property_validated"
         },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionTokenService",
             "name": "TransactionTokenService",
@@ -1531,25 +1626,80 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Services-TransactionTokenService.html#method___construct"
         },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionTokenService\u003A\u003AupdateServices\u0028\u0029",
+            "name": "updateServices",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionTokenService.html#method_updateServices"
+        },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionTokenService\u003A\u003AgetTokenService\u0028\u0029",
             "name": "getTokenService",
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Services-TransactionTokenService.html#method_getTokenService"
         },                {
-            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionTokenService\u003A\u003A\u0024transactionHash",
-            "name": "transactionHash",
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionTokenService\u003A\u003AsetTransactionHash\u0028\u0029",
+            "name": "setTransactionHash",
             "summary": "",
-            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionTokenService.html#property_transactionHash"
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionTokenService.html#method_setTransactionHash"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionTokenService\u003A\u003AconstantStorageClass\u0028\u0029",
+            "name": "constantStorageClass",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionTokenService.html#method_constantStorageClass"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionTokenService\u003A\u003AgetContractFunctionId\u0028\u0029",
+            "name": "getContractFunctionId",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionTokenService.html#method_getContractFunctionId"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionTokenService\u003A\u003Avalidate\u0028\u0029",
+            "name": "validate",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionTokenService.html#method_validate"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionTokenService\u003A\u003AisValidated\u0028\u0029",
+            "name": "isValidated",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionTokenService.html#method_isValidated"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionTokenService\u003A\u003AgetMethodTypes\u0028\u0029",
+            "name": "getMethodTypes",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionTokenService.html#method_getMethodTypes"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionTokenService\u003A\u003AgetMethodType\u0028\u0029",
+            "name": "getMethodType",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionTokenService.html#method_getMethodType"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionTokenService\u003A\u003Adecode\u0028\u0029",
+            "name": "decode",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionTokenService.html#method_decode"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionTokenService\u003A\u003AgetEventsTopics\u0028\u0029",
+            "name": "getEventsTopics",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionTokenService.html#method_getEventsTopics"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionTokenService\u003A\u003AdecodeTransactionLogs\u0028\u0029",
+            "name": "decodeTransactionLogs",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionTokenService.html#method_decodeTransactionLogs"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionTokenService\u003A\u003AdecodeTransactionArgs\u0028\u0029",
+            "name": "decodeTransactionArgs",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionTokenService.html#method_decodeTransactionArgs"
         },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionTokenService\u003A\u003A\u0024tokenService",
             "name": "tokenService",
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Services-TransactionTokenService.html#property_tokenService"
         },                {
-            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionTokenService\u003A\u003A\u0024d",
-            "name": "d",
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionTokenService\u003A\u003A\u0024validated",
+            "name": "validated",
             "summary": "",
-            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionTokenService.html#property_d"
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionTokenService.html#property_validated"
         },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\UniswapFactoryService",
             "name": "UniswapFactoryService",
@@ -1575,6 +1725,11 @@ Search.appendIndex(
             "name": "getContractAddress",
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Services-UniswapFactoryService.html#method_getContractAddress"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\UniswapFactoryService\u003A\u003AgetContract\u0028\u0029",
+            "name": "getContract",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-UniswapFactoryService.html#method_getContract"
         },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\UniswapFactoryService\u003A\u003AsetContractAddress\u0028\u0029",
             "name": "setContractAddress",
@@ -1846,6 +2001,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Services-UniswapRouteService.html#method_getFunctionSelector"
         },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\UniswapRouteService\u003A\u003AgetContract\u0028\u0029",
+            "name": "getContract",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-UniswapRouteService.html#method_getContract"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\UniswapRouteService\u003A\u003AgetEventsTopics\u0028\u0029",
+            "name": "getEventsTopics",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-UniswapRouteService.html#method_getEventsTopics"
+        },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\UniswapRouteService\u003A\u003A\u0024contractAddress",
             "name": "contractAddress",
             "summary": "",
@@ -1975,11 +2140,6 @@ Search.appendIndex(
             "name": "SLIPPAGE",
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Utils-PairLib.html#property_SLIPPAGE"
-        },                {
-            "fqsen": "\\Igor360\\UniswapV2Connector\\Utils\\TimestampToDateTime",
-            "name": "TimestampToDateTime",
-            "summary": "",
-            "url": "classes/Igor360-UniswapV2Connector-Utils-TimestampToDateTime.html"
         },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Utils\\TransactionValidators",
             "name": "TransactionValidators",
@@ -2146,20 +2306,315 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Interfaces-TransactionTokenInterface.html"
         },                {
-            "fqsen": "\\Igor360\\UniswapV2Connector\\Interfaces\\TransactionTokenInterface\u003A\u003AAPPROVE_TOKEN_METHOD_ID",
-            "name": "APPROVE_TOKEN_METHOD_ID",
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Interfaces\\TransactionTokenInterface\u003A\u003AAPPROVE_TOKENS_METHOD_ID",
+            "name": "APPROVE_TOKENS_METHOD_ID",
             "summary": "",
-            "url": "classes/Igor360-UniswapV2Connector-Interfaces-TransactionTokenInterface.html#constant_APPROVE_TOKEN_METHOD_ID"
+            "url": "classes/Igor360-UniswapV2Connector-Interfaces-TransactionTokenInterface.html#constant_APPROVE_TOKENS_METHOD_ID"
         },                {
-            "fqsen": "\\Igor360\\UniswapV2Connector\\Interfaces\\TransactionTokenInterface\u003A\u003ATRANSFER_TOKEN_METHOD_ID",
-            "name": "TRANSFER_TOKEN_METHOD_ID",
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Interfaces\\TransactionTokenInterface\u003A\u003ATRANSFER_TOKENS_METHOD_ID",
+            "name": "TRANSFER_TOKENS_METHOD_ID",
             "summary": "",
-            "url": "classes/Igor360-UniswapV2Connector-Interfaces-TransactionTokenInterface.html#constant_TRANSFER_TOKEN_METHOD_ID"
+            "url": "classes/Igor360-UniswapV2Connector-Interfaces-TransactionTokenInterface.html#constant_TRANSFER_TOKENS_METHOD_ID"
         },                {
-            "fqsen": "\\Igor360\\UniswapV2Connector\\Interfaces\\TransactionTokenInterface\u003A\u003ATRANSFER_FROM_TOKEN_METHOD_ID",
-            "name": "TRANSFER_FROM_TOKEN_METHOD_ID",
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Interfaces\\TransactionTokenInterface\u003A\u003ATRANSFER_FROM_TOKENS_METHOD_ID",
+            "name": "TRANSFER_FROM_TOKENS_METHOD_ID",
             "summary": "",
-            "url": "classes/Igor360-UniswapV2Connector-Interfaces-TransactionTokenInterface.html#constant_TRANSFER_FROM_TOKEN_METHOD_ID"
+            "url": "classes/Igor360-UniswapV2Connector-Interfaces-TransactionTokenInterface.html#constant_TRANSFER_FROM_TOKENS_METHOD_ID"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Interfaces\\TransactionDecodeInterface",
+            "name": "TransactionDecodeInterface",
+            "summary": "Interface\u0020for\u0020factory\u0020to\u0020call\u0020decode\u0020function\u0020for\u0020decode\u0020transaction",
+            "url": "classes/Igor360-UniswapV2Connector-Interfaces-TransactionDecodeInterface.html"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Interfaces\\TransactionDecodeInterface\u003A\u003Adecode\u0028\u0029",
+            "name": "decode",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Interfaces-TransactionDecodeInterface.html#method_decode"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Interfaces\\TransactionDecodeInterface\u003A\u003Avalidate\u0028\u0029",
+            "name": "validate",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Interfaces-TransactionDecodeInterface.html#method_validate"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Interfaces\\TransactionDecodeInterface\u003A\u003AisValidated\u0028\u0029",
+            "name": "isValidated",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Interfaces-TransactionDecodeInterface.html#method_isValidated"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Lib\\RLP",
+            "name": "RLP",
+            "summary": "It\u0027s\u0020a\u0020instance\u0020for\u0020ethereum\u0020recursive\u0020length\u0020encoding.",
+            "url": "classes/Igor360-UniswapV2Connector-Lib-RLP.html"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Lib\\RLP\u003A\u003Aencode\u0028\u0029",
+            "name": "encode",
+            "summary": "Return\u0020RLP\u0020encoded\u0020of\u0020the\u0020given\u0020inputs.",
+            "url": "classes/Igor360-UniswapV2Connector-Lib-RLP.html#method_encode"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Lib\\RLP\u003A\u003Adecode\u0028\u0029",
+            "name": "decode",
+            "summary": "Return\u0020RLP\u0020decoded\u0020of\u0020the\u0020given\u0020hex\u0020encoded\u0020data.",
+            "url": "classes/Igor360-UniswapV2Connector-Lib-RLP.html#method_decode"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Lib\\RLP\u003A\u003AdecodeData\u0028\u0029",
+            "name": "decodeData",
+            "summary": "Main\u0020function\u0020of\u0020RLP\u0020decode.",
+            "url": "classes/Igor360-UniswapV2Connector-Lib-RLP.html#method_decodeData"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Lib\\RLP\u003A\u003AencodeLength\u0028\u0029",
+            "name": "encodeLength",
+            "summary": "Return\u0020RLP\u0020encoded\u0020the\u0020length\u0020of\u0020data.",
+            "url": "classes/Igor360-UniswapV2Connector-Lib-RLP.html#method_encodeLength"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Lib\\RLP\u003A\u003AintToHex\u0028\u0029",
+            "name": "intToHex",
+            "summary": "Return\u0020hex\u0020of\u0020the\u0020given\u0020integer.",
+            "url": "classes/Igor360-UniswapV2Connector-Lib-RLP.html#method_intToHex"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Lib\\RLP\u003A\u003ApadToEven\u0028\u0029",
+            "name": "padToEven",
+            "summary": "Pad\u0020hex\u0020encoded\u0020data\u0020to\u0020even\u0020length\u0020\u0028add\u00200\u0029.",
+            "url": "classes/Igor360-UniswapV2Connector-Lib-RLP.html#method_padToEven"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Lib\\RLP\u003A\u003AencodeInput\u0028\u0029",
+            "name": "encodeInput",
+            "summary": "Main\u0020encode\u0020function\u0020to\u0020transform\u0020data\u0020to\u0020hex\u0020encoded\u0020string.",
+            "url": "classes/Igor360-UniswapV2Connector-Lib-RLP.html#method_encodeInput"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Lib\\Types\\Numeric",
+            "name": "Numeric",
+            "summary": "It\u0027s\u0020a\u0020numeric\u0020type\u0020instance\u0020for\u0020ethereum\u0020recursive\u0020length\u0020encoding.",
+            "url": "classes/Igor360-UniswapV2Connector-Lib-Types-Numeric.html"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Lib\\Types\\Numeric\u003A\u003Aencode\u0028\u0029",
+            "name": "encode",
+            "summary": "Return\u0020hex\u0020encoded\u0020of\u0020numeric\u0020string.",
+            "url": "classes/Igor360-UniswapV2Connector-Lib-Types-Numeric.html#method_encode"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Lib\\Types\\Str",
+            "name": "Str",
+            "summary": "It\u0027s\u0020a\u0020string\u0020type\u0020instance\u0020for\u0020ethereum\u0020recursive\u0020length\u0020encoding.",
+            "url": "classes/Igor360-UniswapV2Connector-Lib-Types-Str.html"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Lib\\Types\\Str\u003A\u003Aencode\u0028\u0029",
+            "name": "encode",
+            "summary": "Return\u0020encoded\u0020string\u0020of\u0020given\u0020input\u0020and\u0020encoding.",
+            "url": "classes/Igor360-UniswapV2Connector-Lib-Types-Str.html#method_encode"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Lib\\Types\\Str\u003A\u003AdecodeHex\u0028\u0029",
+            "name": "decodeHex",
+            "summary": "Return\u0020decoded\u0020hex\u0020encoded\u0020of\u0020given\u0020input,\u0020same\u0020with\u0020hex2bin",
+            "url": "classes/Igor360-UniswapV2Connector-Lib-Types-Str.html#method_decodeHex"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Models\\ContractCallInfo",
+            "name": "ContractCallInfo",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Models-ContractCallInfo.html"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Models\\ContractCallInfo\u003A\u003A\u0024type",
+            "name": "type",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Models-ContractCallInfo.html#property_type"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Models\\ContractCallInfo\u003A\u003A\u0024function",
+            "name": "function",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Models-ContractCallInfo.html#property_function"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Models\\ContractCallInfo\u003A\u003A\u0024decodedArgs",
+            "name": "decodedArgs",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Models-ContractCallInfo.html#property_decodedArgs"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Models\\ContractCallInfo\u003A\u003A\u0024decodedLogs",
+            "name": "decodedLogs",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Models-ContractCallInfo.html#property_decodedLogs"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIEncryptService",
+            "name": "ABIEncryptService",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-ABIEncryptService.html"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIEncryptService\u003A\u003AencodeCall\u0028\u0029",
+            "name": "encodeCall",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-ABIEncryptService.html#method_encodeCall"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIEncryptService\u003A\u003AencodeArg\u0028\u0029",
+            "name": "encodeArg",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-ABIEncryptService.html#method_encodeArg"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIEncryptService\u003A\u003AdecodeResponse\u0028\u0029",
+            "name": "decodeResponse",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-ABIEncryptService.html#method_decodeResponse"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIEncryptService\u003A\u003AdecodeFunctionArgs\u0028\u0029",
+            "name": "decodeFunctionArgs",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-ABIEncryptService.html#method_decodeFunctionArgs"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIEncryptService\u003A\u003AdecodeArg\u0028\u0029",
+            "name": "decodeArg",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-ABIEncryptService.html#method_decodeArg"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIEncryptService\u003A\u003AdecodeArrayValue\u0028\u0029",
+            "name": "decodeArrayValue",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-ABIEncryptService.html#method_decodeArrayValue"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIEncryptService\u003A\u003AdecodeAddressResponse\u0028\u0029",
+            "name": "decodeAddressResponse",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-ABIEncryptService.html#method_decodeAddressResponse"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIEncryptService\u003A\u003AgenerateMethodSelector\u0028\u0029",
+            "name": "generateMethodSelector",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-ABIEncryptService.html#method_generateMethodSelector"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIEncryptService\u003A\u003AgenerateMethodSelectors\u0028\u0029",
+            "name": "generateMethodSelectors",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-ABIEncryptService.html#method_generateMethodSelectors"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIEncryptService\u003A\u003AdecodeEventParams\u0028\u0029",
+            "name": "decodeEventParams",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-ABIEncryptService.html#method_decodeEventParams"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIEncryptService\u003A\u003AnestedTypes\u0028\u0029",
+            "name": "nestedTypes",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-ABIEncryptService.html#method_nestedTypes"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIEncryptService\u003A\u003AstaticPartLength\u0028\u0029",
+            "name": "staticPartLength",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-ABIEncryptService.html#method_staticPartLength"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIEncryptService\u003A\u003AisDynamicType\u0028\u0029",
+            "name": "isDynamicType",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-ABIEncryptService.html#method_isDynamicType"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIEncryptService\u003A\u003A\u0024functions",
+            "name": "functions",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-ABIEncryptService.html#property_functions"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIEncryptService\u003A\u003A\u0024strictMode",
+            "name": "strictMode",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-ABIEncryptService.html#property_strictMode"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\ABIEncryptService\u003A\u003A\u0024events",
+            "name": "events",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-ABIEncryptService.html#property_events"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\DataTypes\\Event",
+            "name": "Event",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-DataTypes-Event.html"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\DataTypes\\Event\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-DataTypes-Event.html#method___construct"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\DataTypes\\Event\u003A\u003AgetSignature\u0028\u0029",
+            "name": "getSignature",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-DataTypes-Event.html#method_getSignature"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\DataTypes\\Event\u003A\u003AgetTopic\u0028\u0029",
+            "name": "getTopic",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-DataTypes-Event.html#method_getTopic"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\DataTypes\\Event\u003A\u003AgetHandler\u0028\u0029",
+            "name": "getHandler",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-DataTypes-Event.html#method_getHandler"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\DataTypes\\Event\u003A\u003AgetAbi\u0028\u0029",
+            "name": "getAbi",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-DataTypes-Event.html#method_getAbi"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\DataTypes\\Event\u003A\u003AgetName\u0028\u0029",
+            "name": "getName",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-DataTypes-Event.html#method_getName"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\DataTypes\\Event\u003A\u003AgetTopicInputs\u0028\u0029",
+            "name": "getTopicInputs",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-DataTypes-Event.html#method_getTopicInputs"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\DataTypes\\Event\u003A\u003AgetDataInputs\u0028\u0029",
+            "name": "getDataInputs",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-DataTypes-Event.html#method_getDataInputs"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\DataTypes\\Event\u003A\u003A\u0024abi",
+            "name": "abi",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-DataTypes-Event.html#property_abi"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\DataTypes\\Event\u003A\u003A\u0024anonymous",
+            "name": "anonymous",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-DataTypes-Event.html#property_anonymous"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\DataTypes\\Event\u003A\u003A\u0024inputs",
+            "name": "inputs",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-DataTypes-Event.html#property_inputs"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\DataTypes\\Event\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-DataTypes-Event.html#property_name"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\DataTypes\\Event\u003A\u003A\u0024topicInputs",
+            "name": "topicInputs",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-DataTypes-Event.html#property_topicInputs"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\DataTypes\\Event\u003A\u003A\u0024dataInputs",
+            "name": "dataInputs",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-DataTypes-Event.html#property_dataInputs"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Utils\\ClassUtils",
+            "name": "ClassUtils",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Utils-ClassUtils.html"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Utils\\ClassUtils\u003A\u003AgetConstants\u0028\u0029",
+            "name": "getConstants",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Utils-ClassUtils.html#method_getConstants"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Utils\\ClassUtils\u003A\u003AconstantStorageClass\u0028\u0029",
+            "name": "constantStorageClass",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Utils-ClassUtils.html#method_constantStorageClass"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Utils\\WeiUtils",
+            "name": "WeiUtils",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Utils-WeiUtils.html"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Utils\\WeiUtils\u003A\u003AconvertCurrency\u0028\u0029",
+            "name": "convertCurrency",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Utils-WeiUtils.html#method_convertCurrency"
         },                {
             "fqsen": "\\",
             "name": "\\",
@@ -2190,6 +2645,16 @@ Search.appendIndex(
             "name": "Interfaces",
             "summary": "",
             "url": "namespaces/igor360-uniswapv2connector-interfaces.html"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Lib",
+            "name": "Lib",
+            "summary": "",
+            "url": "namespaces/igor360-uniswapv2connector-lib.html"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Lib\\Types",
+            "name": "Types",
+            "summary": "",
+            "url": "namespaces/igor360-uniswapv2connector-lib-types.html"
         },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Maths",
             "name": "Maths",
