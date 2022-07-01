@@ -36,6 +36,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Configs-Config.html#method_loadERC20V2ABI"
         },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Configs\\Config\u003A\u003AloadWETHABI\u0028\u0029",
+            "name": "loadWETHABI",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Configs-Config.html#method_loadWETHABI"
+        },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Configs\\Config\u003A\u003AloadERC721ABI\u0028\u0029",
             "name": "loadERC721ABI",
             "summary": "",
@@ -1386,6 +1391,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Services-TokenService.html#method___construct"
         },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TokenService\u003A\u003AgetContractWeth\u0028\u0029",
+            "name": "getContractWeth",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TokenService.html#method_getContractWeth"
+        },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TokenService\u003A\u003AgetContractAddress\u0028\u0029",
             "name": "getContractAddress",
             "summary": "",
@@ -1445,6 +1455,11 @@ Search.appendIndex(
             "name": "contract",
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Services-TokenService.html#property_contract"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TokenService\u003A\u003A\u0024contractWeth",
+            "name": "contractWeth",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TokenService.html#property_contractWeth"
         },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TokenService\u003A\u003A\u0024tokeInfo",
             "name": "tokeInfo",
@@ -1610,6 +1625,11 @@ Search.appendIndex(
             "name": "factoryService",
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#property_factoryService"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003A\u0024tokenService",
+            "name": "tokenService",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-TransactionSwapService.html#property_tokenService"
         },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\TransactionSwapService\u003A\u003A\u0024validated",
             "name": "validated",
@@ -1871,6 +1891,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Services-UniswapPairService.html#method_loadPriceCumulative"
         },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\UniswapPairService\u003A\u003AupdatePrices\u0028\u0029",
+            "name": "updatePrices",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-UniswapPairService.html#method_updatePrices"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\UniswapPairService\u003A\u003AloadTokensInfo\u0028\u0029",
+            "name": "loadTokensInfo",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Services-UniswapPairService.html#method_loadTokensInfo"
+        },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\UniswapPairService\u003A\u003AloadToken0Info\u0028\u0029",
             "name": "loadToken0Info",
             "summary": "",
@@ -2130,6 +2160,11 @@ Search.appendIndex(
             "name": "amountWithSlippage",
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Utils-PairLib.html#method_amountWithSlippage"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Utils\\PairLib\u003A\u003AtoFormat\u0028\u0029",
+            "name": "toFormat",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Utils-PairLib.html#method_toFormat"
         },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Utils\\PairLib\u003A\u003A\u0024FEE_DENOMINATOR",
             "name": "FEE_DENOMINATOR",
@@ -2615,6 +2650,16 @@ Search.appendIndex(
             "name": "convertCurrency",
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Utils-WeiUtils.html#method_convertCurrency"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Contracts\\WETHContract",
+            "name": "WETHContract",
+            "summary": "Class\u0020EthereumService",
+            "url": "classes/Igor360-UniswapV2Connector-Contracts-WETHContract.html"
+        },                {
+            "fqsen": "\\Igor360\\UniswapV2Connector\\Contracts\\WETHContract\u003A\u003Aabi\u0028\u0029",
+            "name": "abi",
+            "summary": "",
+            "url": "classes/Igor360-UniswapV2Connector-Contracts-WETHContract.html#method_abi"
         },                {
             "fqsen": "\\",
             "name": "\\",
