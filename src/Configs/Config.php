@@ -42,6 +42,11 @@ abstract class Config implements ConfigInterface
         return trim(file_get_contents(__DIR__ . '/../../config/abis/erc20_2.json'));
     }
 
+    public static function loadWETHABI(): string
+    {
+        return trim(file_get_contents(__DIR__ . '/../../config/abis/weth.json'));
+    }
+
     public static function loadERC721ABI(): string
     {
         return trim(file_get_contents(__DIR__ . '/../../config/abis/erc721.json'));
@@ -54,6 +59,7 @@ abstract class Config implements ConfigInterface
             "factoryABI" => self::loadFactoryABI(),
             "pairABI" => self::loadPairABI(),
             "erc20ABI" => self::loadERC20ABI(),
+            "wethABI" => self::loadWETHABI(),
             "erc721ABI" => self::loadERC721ABI(),
         ];
     }

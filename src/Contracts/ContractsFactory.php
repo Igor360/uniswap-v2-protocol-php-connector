@@ -10,6 +10,7 @@ abstract class ContractsFactory
 {
     protected const ContractClasses = [
         'erc20' => ERC20Contract::class,
+        'weth' => WETHContract::class,
         'erc721' => ERC721Contract::class,
         'factory' => UniswapFactory::class,
         'pair' => UniswapPair::class,

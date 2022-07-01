@@ -348,6 +348,9 @@ abstract class ABIEncryptService
         }
 
         $dataEncoded = $encodedEventLog['data'] ?? false;
+        if (strpos($dataEncoded, "0x") === 0) {
+            $dataEncoded = substr($dataEncoded, 2);
+        }
 
         // params
         $dataResponseParams = $event->getDataInputs() ?? [];
@@ -372,7 +375,7 @@ abstract class ABIEncryptService
                 $res[] = $decoded;
             }
         }
-
+        $res["contract"] = $encodedEventLog["address"] ?? null;
         return $res;
     }
 

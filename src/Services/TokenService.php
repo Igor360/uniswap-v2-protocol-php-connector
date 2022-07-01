@@ -4,6 +4,7 @@ namespace Igor360\UniswapV2Connector\Services;
 
 use Igor360\UniswapV2Connector\Contracts\ContractsFactory;
 use Igor360\UniswapV2Connector\Contracts\ERC20Contract;
+use Igor360\UniswapV2Connector\Contracts\WETHContract;
 use Igor360\UniswapV2Connector\Interfaces\ConnectionInterface;
 use Igor360\UniswapV2Connector\Models\Token;
 
@@ -13,6 +14,11 @@ class TokenService
 
     private ERC20Contract $contract;
 
+    /**
+     * @var WETHContract|ContractService
+     */
+    private WETHContract $contractWeth;
+
     private Token $tokeInfo;
 
     public function __construct(?string $contractAddress, ConnectionInterface $credentials)
@@ -21,10 +27,20 @@ class TokenService
         $this->tokeInfo = new Token();
         $this->tokeInfo->address = $contractAddress;
         $this->contract = ContractsFactory::make('erc20', $credentials);
+        $this->contractWeth = ContractsFactory::make('weth', $credentials);
         if (!is_null($contractAddress)) {
             $this->loadTokenInfo();
         }
     }
+
+    /**
+     * @return WETHContract|ContractService
+     */
+    public function getContractWeth()
+    {
+        return $this->contractWeth;
+    }
+
 
     /**
      * @return string|null

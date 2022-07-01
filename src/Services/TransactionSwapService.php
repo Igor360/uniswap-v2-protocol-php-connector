@@ -23,6 +23,8 @@ class TransactionSwapService extends TransactionService implements TransactionDe
 
     private UniswapFactoryService $factoryService;
 
+    private TokenService $tokenService;
+
     private bool $validated = false;
 
     /**
@@ -35,6 +37,7 @@ class TransactionSwapService extends TransactionService implements TransactionDe
         $this->uniswapRouteService = new UniswapRouteService($this->transactionInfo->to ?? null, $credentials);
         $this->pairService = new UniswapPairService(null, $credentials);
         $this->factoryService = new UniswapFactoryService(null, $credentials);
+        $this->tokenService = new TokenService(null, $credentials);
         $this->validate();
         $this->decode();
     }
@@ -42,6 +45,8 @@ class TransactionSwapService extends TransactionService implements TransactionDe
     public function updateServices(): self
     {
         $this->uniswapRouteService->setContractAddress($this->transactionInfo->to);
+        $this->validate();
+        $this->decode();
         return $this;
     }
 
@@ -137,18 +142,23 @@ class TransactionSwapService extends TransactionService implements TransactionDe
                 continue;
             }
             $decoded = $this->uniswapRouteService->getContract()->decodeContractTransactionLogs($topicId, $log);
-            $decodedForPairs = $this->pairService->getContract()->decodeContractTransactionLogs($topicId, $log);
-            $decodedForFactory = $this->factoryService->getContract()->decodeContractTransactionLogs($topicId, $log);
             if (!is_null($decoded)) {
                 $decodedLogs [] = $decoded;
                 continue;
             }
+            $decodedForPairs = $this->pairService->getContract()->decodeContractTransactionLogs($topicId, $log);
             if (!is_null($decodedForPairs)) {
                 $decodedLogs [] = $decodedForPairs;
                 continue;
             }
+            $decodedForFactory = $this->factoryService->getContract()->decodeContractTransactionLogs($topicId, $log);
             if (!is_null($decodedForFactory)) {
                 $decodedLogs [] = $decodedForFactory;
+                continue;
+            }
+            $decodedTokenFunctions = $this->tokenService->getContractWeth()->decodeContractTransactionLogs($topicId, $log);
+            if (!is_null($decodedTokenFunctions)) {
+                $decodedLogs [] = $decodedTokenFunctions;
             }
         }
         $this->transactionInfo->callInfo->decodedLogs = $decodedLogs;
