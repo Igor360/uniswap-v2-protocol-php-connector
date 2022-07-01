@@ -8,7 +8,7 @@ class WETHContract extends ERC20Contract
 {
     function abi(): array
     {
-        return json_decode(Config::get("uniswap-v2-connector.erc20ABI"), true, 512, JSON_THROW_ON_ERROR);
+        return json_decode(Config::get("uniswap-v2-connector.wethABI"), true, 512, JSON_THROW_ON_ERROR);
     }
 
 }
