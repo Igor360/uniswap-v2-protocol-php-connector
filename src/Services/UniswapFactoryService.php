@@ -106,7 +106,7 @@ class UniswapFactoryService
 
     public function getAllPairs(): array
     {
-        return $this->getPairs(0, $this->factoryInfo->allPairsLength);
+        return $this->getPairs( $this->factoryInfo->allPairsLength, 0);
     }
 
     public function getPairInfo(string $address): Pair
