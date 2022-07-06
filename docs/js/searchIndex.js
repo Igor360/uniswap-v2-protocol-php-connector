@@ -1936,11 +1936,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Igor360-UniswapV2Connector-Services-UniswapPairService.html#constant_MINIMUM_LIQUIDITY"
         },                {
-            "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\UniswapPairService\u003A\u003A\u0024contractAddress",
-            "name": "contractAddress",
-            "summary": "",
-            "url": "classes/Igor360-UniswapV2Connector-Services-UniswapPairService.html#property_contractAddress"
-        },                {
             "fqsen": "\\Igor360\\UniswapV2Connector\\Services\\UniswapPairService\u003A\u003A\u0024contract",
             "name": "contract",
             "summary": "",

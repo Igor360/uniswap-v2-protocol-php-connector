@@ -15,13 +15,11 @@ use Igor360\UniswapV2Connector\Utils\PairLib;
 use Igor360\UniswapV2Connector\Utils\WeiUtils;
 use Illuminate\Support\Arr;
 
-class UniswapPairService
+class UniswapPairService extends TokenService
 {
     use DateTimeConvert;
     use PairLib;
     use WeiUtils;
-
-    private ?string $contractAddress;
 
     private UniswapPair $contract;
 
@@ -40,6 +38,7 @@ class UniswapPairService
      */
     public function __construct(?string $contractAddress, ConnectionInterface $credentials)
     {
+        parent::__construct($contractAddress, $credentials);
         $this->math = MathFacade::getSourceInstance();
         $this->contractAddress = $contractAddress;
         $this->pairInfo = new Pair();
@@ -67,6 +66,7 @@ class UniswapPairService
      */
     public function setContractAddress(string $contractAddress): self
     {
+        parent::setContractAddress($contractAddress);
         $this->contractAddress = $contractAddress;
         $this->pairInfo->pairAddress = $contractAddress;
         return $this;

@@ -10,7 +10,7 @@ use Igor360\UniswapV2Connector\Models\Token;
 
 class TokenService
 {
-    private ?string $contractAddress;
+    protected ?string $contractAddress;
 
     private ERC20Contract $contract;
 
@@ -62,7 +62,7 @@ class TokenService
      * @param string|null $contractAddress
      * @return TokenService
      */
-    public function setContractAddress(?string $contractAddress): self
+    public function setContractAddress(string $contractAddress): self
     {
         $this->contractAddress = $contractAddress;
         return $this;
