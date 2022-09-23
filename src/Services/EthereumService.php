@@ -83,5 +83,17 @@ class EthereumService extends EthereumRPC
         $res = $this->jsonRPC("eth_getTransactionReceipt", null, [$txHash]);
         return $res ? Arr::get($res, 'result') : [];
     }
+
+    public function getTransactionTrace(string $txHash): ?array
+    {
+        $res = $this->jsonRPC("debug_traceTransaction", null, [$txHash]);
+        return $res ? Arr::get($res, 'result') : [];
+    }
+
+    public function getBlockTrace(int $number): ?array
+    {
+        $res = $this->jsonRPC("debug_traceBlockByNumber", null, ["0x".dechex($number)]);
+        return $res ? Arr::get($res, 'result') : [];
+    }
 }
 

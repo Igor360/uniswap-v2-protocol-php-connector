@@ -47,5 +47,9 @@ class Transaction
     public ?array $logs;
 
     public ?ContractCallInfo $callInfo;
+
+    public ?string $rejectReason;
+
+    public ?array $trace;
 }
 

@@ -100,4 +100,12 @@ class TransactionService
             throw new TransactionException("Hash is not set");
         }
     }
+
+    /**
+     * @return EthereumService
+     */
+    public function getRpc(): EthereumService
+    {
+        return $this->rpc;
+    }
 }

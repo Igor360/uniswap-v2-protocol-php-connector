@@ -12,11 +12,9 @@ $credentials = new \Igor360\UniswapV2Connector\Connections\BaseCredentials($host
 
 $pairService = new \Igor360\UniswapV2Connector\Services\UniswapPairService($pair, $credentials);
 
-var_dump($pairService->getPairInfoJson());
 // Load lp token info
 var_dump($pairService->getTokenInfo());
 
 // Get pair info with tokens
-
 
 var_dump($pairService->loadTokensInfo()->getPairInfoJson());
