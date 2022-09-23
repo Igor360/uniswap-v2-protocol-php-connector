@@ -92,7 +92,25 @@ class EthereumService extends EthereumRPC
 
     public function getBlockTrace(int $number): ?array
     {
-        $res = $this->jsonRPC("debug_traceBlockByNumber", null, ["0x".dechex($number)]);
+        $res = $this->jsonRPC("debug_traceBlockByNumber", null, ["0x" . dechex($number)]);
+        return $res ? Arr::get($res, 'result') : [];
+    }
+
+    public function getBlockSigners(int $number): ?array
+    {
+        $res = $this->jsonRPC("clique_getSigners", null, ["0x" . dechex($number)]);
+        return $res ? Arr::get($res, 'result') : [];
+    }
+
+    public function getBlockSignersByHash(string $hash): ?array
+    {
+        $res = $this->jsonRPC("clique_getSignersAtHash", null, [$hash]);
+        return $res ? Arr::get($res, 'result') : [];
+    }
+
+    public function getConsensusStatus(): ?array
+    {
+        $res = $this->jsonRPC("clique_status");
         return $res ? Arr::get($res, 'result') : [];
     }
 }

@@ -24,3 +24,8 @@ var_dump($txTrace['failed']);
 
 var_dump(\Igor360\UniswapV2Connector\Services\DataTypes\ASCII::base16Decode($service->getRpc()->getBlockTrace(1001)[0]['result']['returnValue']));
 var_dump($service->getRpc()->getBlockTrace(1010)[0]['result']['failed']);
+
+// Block signers
+
+var_dump($service->getRpc()->getBlockSigners(4)); // returns array of validators/miners who confirm block
+var_dump($service->getRpc()->getConsensusStatus());
