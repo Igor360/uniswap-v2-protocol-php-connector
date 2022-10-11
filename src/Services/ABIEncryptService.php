@@ -336,6 +336,9 @@ abstract class ABIEncryptService
 //            throw new ContractABIException(sprintf('Call event "%s" is undefined in ABI', $name));
         }
         $res["Event"] = $event->getName();
+        $res["EventId"] = substr($name, 0,10);
+        $res["EventCall"] = $event->getSignature();
+        $res["ABI"] = $event->getAbi();
         $topics = $encodedEventLog['topics'] ?? false;
         if (!is_array($topics) && !is_null($topics)) {
             throw new ContractABIException('Unexpected value for param "topics"');

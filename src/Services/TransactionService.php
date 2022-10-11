@@ -92,7 +92,7 @@ class TransactionService
 
     protected function isContract(): void
     {
-        if (!is_null($this->transactionAddress) && is_null($this->transactionInfo->data)) {
+        if (!is_null($this->transactionAddress) && is_null($this->transactionInfo->data ?? null)) {
             throw new TransactionException("It's not contract transaction");
         }
     }
