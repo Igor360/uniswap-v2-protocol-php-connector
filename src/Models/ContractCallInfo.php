@@ -8,7 +8,7 @@ class ContractCallInfo
 
     public ?string $function;
 
-    public ?array $methods;
+    public ?array $functionDetails;
 
     public array $decodedArgs;
 
