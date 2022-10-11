@@ -172,7 +172,9 @@ class TransactionSwapService extends TransactionService implements TransactionDe
             throw new TransactionException("Invalid method, method with selector ${methodId} not located in abi");
         }
         $functionName = $methods[$methodId] ?? null;
+        ["function" => $functionWithParams] = $this->uniswapRouteService->getContract()->getMethodSelector($functionName);
         $this->transactionInfo->callInfo->function = $functionName;
+        $this->transactionInfo->callInfo->functionWithParams = $functionWithParams;
         $this->transactionInfo->callInfo->functionDetails = $this->uniswapRouteService->getContract()->getFunctionABIDetailsByName($functionName);
         $this->transactionInfo->callInfo->decodedArgs = $this->uniswapRouteService->getContract()->decodeContractTransactionArgs($functionName, $this->transactionInfo->data);
     }

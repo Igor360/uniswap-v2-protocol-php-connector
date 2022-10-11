@@ -131,7 +131,10 @@ class TransactionTokenService extends TransactionService implements TransactionD
             throw new TransactionException("Invalid method, method with selector ${methodId} not located in abi");
         }
         $functionName = $methods[$methodId] ?? null;
+        ["function" => $functionWithParams] = $this->tokenService->getContract()->getMethodSelector($functionName);
         $this->transactionInfo->callInfo->function = $functionName;
+        $this->transactionInfo->callInfo->functionWithParams = $functionWithParams;
+        $this->transactionInfo->callInfo->functionDetails = $this->tokenService->getContract()->getFunctionABIDetailsByName($functionName);
         $this->transactionInfo->callInfo->decodedArgs = $this->tokenService->getContract()->decodeContractTransactionArgs($functionName, $this->transactionInfo->data);
     }
 }
