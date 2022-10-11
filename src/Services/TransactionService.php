@@ -39,6 +39,9 @@ class TransactionService
     public function loadTransaction(): self
     {
         $transaction = $this->rpc->getTransactionByHash($this->transactionAddress);
+        if (is_null($transaction)) {
+            return $this;
+        }
         $this->transactionInfo->hash = Arr::get($transaction, 'hash');
         $this->transactionInfo->from = Arr::get($transaction, 'from');
         $this->transactionInfo->to = Arr::get($transaction, 'to');

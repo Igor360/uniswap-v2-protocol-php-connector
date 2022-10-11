@@ -27,3 +27,7 @@ var_dump($service->getTransactionInfo()->callInfo);
 $service->setTransactionHash("0xe864ca685aa915302f98a7d758b5a9c7a410ef54b3bc0b2235dc5379ef7241f5");
 
 var_dump($service->getTransactionInfo()->callInfo);
+
+$service->setTransactionHash("0x3b2d0b49dac42a68f0c9c2bfbd14e43f1506506070f4148b831cb4d5a2e61ea5");
+
+var_dump($service->getTransactionInfo()->callInfo);
