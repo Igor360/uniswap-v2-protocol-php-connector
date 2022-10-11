@@ -173,6 +173,7 @@ class TransactionSwapService extends TransactionService implements TransactionDe
         }
         $functionName = $methods[$methodId] ?? null;
         $this->transactionInfo->callInfo->function = $functionName;
+        $this->transactionInfo->callInfo->methods = $this->uniswapRouteService->getContract()->getFunctionABIDetailsByName($functionName);
         $this->transactionInfo->callInfo->decodedArgs = $this->uniswapRouteService->getContract()->decodeContractTransactionArgs($functionName, $this->transactionInfo->data);
     }
 

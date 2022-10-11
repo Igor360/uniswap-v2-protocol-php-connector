@@ -16,8 +16,9 @@ final class ABIService extends ABIEncryptService
     /** @var Method|null */
     private ?Method $constructor = null;
     /** @var Method|null *
-    private ?Method $fallback = null;
-    /** @var Method|null */
+     * private ?Method $fallback = null;
+     * /** @var Method|null
+     */
     private ?Method $receive = null;
 
     /**
@@ -91,5 +92,10 @@ final class ABIService extends ABIEncryptService
             $topics[$event->getSignature()] = $event->getTopic();
         }
         return $topics;
+    }
+
+    public function getFunctionByName(string $name): array
+    {
+        return (array)($this->functions[$name] ?? []);
     }
 }
