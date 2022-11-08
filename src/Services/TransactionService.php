@@ -33,7 +33,8 @@ class TransactionService
     {
         return $this
             ->loadTransaction()
-            ->loadLogs();
+            ->loadLogs()
+            ->loadCoin();
     }
 
     public function loadTransaction(): self
@@ -110,5 +111,28 @@ class TransactionService
     public function getRpc(): EthereumService
     {
         return $this->rpc;
+    }
+
+    public function loadCoin(): self
+    {
+        $id = $this->rpc->getChainId();
+        switch ($id) {
+            case 4286:
+                $coin = 'GATO';
+                break;
+            case 137:
+                $coin = 'MATIC';
+                break;
+            case 97:
+            case 56:
+                $coin = 'BNB';
+                break;
+            default:
+                $coin = 'ETH';
+                break;
+        }
+
+        $this->transactionInfo->coin = $coin;
+        return $this;
     }
 }

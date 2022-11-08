@@ -51,5 +51,7 @@ class Transaction
     public ?string $rejectReason;
 
     public ?array $trace;
+
+    public ?string $coin;
 }
 

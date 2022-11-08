@@ -66,6 +66,13 @@ class EthereumService extends EthereumRPC
         return hexdec(Arr::get($res, 'result'));
     }
 
+
+    public function getChainId(): int
+    {
+        $res = $this->jsonRPC('net_version');
+        return (int)Arr::get($res, 'result');
+    }
+
     public function getBlockTransactions(int $blockNumber, bool $onlyHashes = false): array
     {
         $res = $this->jsonRPC('eth_getBlockByNumber', null, ['0x' . dechex($blockNumber), !$onlyHashes]);
