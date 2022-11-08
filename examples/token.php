@@ -27,5 +27,3 @@ var_dump($service->getContract()->balanceOf("0xbbf8ed19c5311fd29ffac02e0dc4efd12
 // Get allowance
 
 var_dump($service->getAllowance("0x74e4716e431f45807dcf19f284c7aa99f18a4fbc", "0xdeda0a79845544814ea92ba4dcf23634b84012ea"));
-
-
