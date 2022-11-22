@@ -2,6 +2,7 @@
 
 namespace Igor360\UniswapV2Connector\Services;
 
+use Igor360\UniswapV2Connector\Contracts\ERC20Contract;
 use Igor360\UniswapV2Connector\Exceptions\TransactionException;
 use Igor360\UniswapV2Connector\Interfaces\ConnectionInterface;
 use Igor360\UniswapV2Connector\Models\Transaction;
@@ -15,12 +16,15 @@ class TransactionService
 
     protected Transaction $transactionInfo;
 
+    protected ConnectionInterface $credentials;
+
     /**
      * @param string $transactionAddress
      * @param ConnectionInterface $credentials
      */
     public function __construct(?string $transactionAddress, ConnectionInterface $credentials)
     {
+        $this->credentials = $credentials;
         $this->transactionAddress = $transactionAddress;
         $this->rpc = new EthereumService($credentials);
         $this->transactionInfo = new Transaction();
@@ -71,6 +75,7 @@ class TransactionService
         $this->transactionInfo->transactionIndex = (string)hexdec(Arr::get($transaction, "transactionIndex") ?? "");
         $this->transactionInfo->type = Arr::get($transaction, "type");
         $this->transactionInfo->contractAddress = Arr::get($transaction, "contractAddress");
+        $this->transactionInfo->token = Arr::get($transaction, "token", "0x0000000000000000000000000000000000000000");
         return $this;
     }
 
@@ -130,6 +135,10 @@ class TransactionService
             default:
                 $coin = 'ETH';
                 break;
+        }
+        if ($this->transactionInfo->token && $this->transactionInfo->token !== "0x0000000000000000000000000000000000000000") {
+            $erc20Service = new ERC20Contract($this->credentials);
+            $coin = $erc20Service->symbol($this->transactionInfo->token);
         }
 
         $this->transactionInfo->coin = $coin;

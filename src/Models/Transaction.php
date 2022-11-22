@@ -53,5 +53,7 @@ class Transaction
     public ?array $trace;
 
     public ?string $coin;
+
+    public ?string $token;
 }
 

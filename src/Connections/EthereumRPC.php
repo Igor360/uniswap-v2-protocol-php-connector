@@ -46,10 +46,10 @@ abstract class EthereumRPC extends BaseRPCService
         $protocol = $this->ssl ? "https" : "http";
 
         if ($this->port) {
-            return sprintf('%s://%s:%s%s', $protocol, $this->host, $this->port, $endPoint);
+            return sprintf('%s://%s:%s%s', $protocol, $this->host, $this->port, $endPoint ?? $this->credentials->path());
         }
 
-        return sprintf('%s://%s%s', $protocol, $this->host, $endPoint);
+        return sprintf('%s://%s%s', $protocol, $this->host, $endPoint ?? $this->credentials->path());
     }
 
     public function baseUrl(): string
