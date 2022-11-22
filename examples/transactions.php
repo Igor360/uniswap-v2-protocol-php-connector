@@ -32,8 +32,9 @@ require(__DIR__ . '/../vendor/autoload.php');
 
 $host = "gatotest.corp.merehead.xyz";
 
-$credentials = new \Igor360\UniswapV2Connector\Connections\BaseCredentials($host, "29946", false);
-$txSwapService = new \Igor360\UniswapV2Connector\Services\TransactionSwapService("0xdf82d268029f800e362ac8ed6aba35c1a34281bc5b7539d4daf21dbbb08fb270", $credentials);
+$credentials = new \Igor360\UniswapV2Connector\Connections\BaseCredentials($host, "8545", true);
+$credentials->setPath("/new/");
+$txSwapService = new \Igor360\UniswapV2Connector\Services\TransactionService("0x0d9742cbc2d2e6f6920521a8fcf548b94f41ccde71d395626f4f1295196fa0d1", $credentials);
 
 var_dump($txSwapService->getTransactionInfo());
 //$txSwapService = new \Igor360\UniswapV2Connector\Services\TransactionTokenService("0x0b86b74853199e3ee8e4a05de3617841ebfad3cdf7f9549bf72abcd5963fd058", $credentials);

@@ -47,11 +47,13 @@ class TransactionService
         if (is_null($transaction)) {
             return $this;
         }
-        $this->transactionInfo->hash = Arr::get($transaction, 'hash');
+
+        var_dump($transaction);
+        $this->transactionInfo->hash = !Arr::has($transaction, 'hash') ? Arr::get($transaction, 'transactionHash') : Arr::get($transaction, 'hash');
         $this->transactionInfo->from = Arr::get($transaction, 'from');
         $this->transactionInfo->to = Arr::get($transaction, 'to');
-        $this->transactionInfo->value = (string)hexdec(Arr::get($transaction, 'value'));
-        $this->transactionInfo->data = Arr::get($transaction, 'input');
+        $this->transactionInfo->value = (string)hexdec(Arr::get($transaction, 'value', "0x0"));
+        $this->transactionInfo->data = Arr::get($transaction, 'input', "");
         $this->transactionInfo->gas = (string)hexdec(Arr::get($transaction, 'gas'));
         $this->transactionInfo->gasPrice = (string)hexdec(Arr::get($transaction, 'gasPrice'));
         $this->transactionInfo->block = (string)hexdec(Arr::get($transaction, 'blockNumber'));
@@ -67,6 +69,7 @@ class TransactionService
     {
 
         $transaction = $this->rpc->getTransactionReceipt($this->transactionAddress);
+        var_dump($transaction);
         $this->transactionInfo->status = (bool)hexdec(Arr::get($transaction, "status", "0x0"));
         $this->transactionInfo->logsBloom = Arr::get($transaction, "logsBloom");
         $this->transactionInfo->cumulativeGasUsed = (string)hexdec(Arr::get($transaction, "cumulativeGasUsed") ?? "");
