@@ -48,7 +48,6 @@ class TransactionService
             return $this;
         }
 
-        var_dump($transaction);
         $this->transactionInfo->hash = !Arr::has($transaction, 'hash') ? Arr::get($transaction, 'transactionHash') : Arr::get($transaction, 'hash');
         $this->transactionInfo->from = Arr::get($transaction, 'from');
         $this->transactionInfo->to = Arr::get($transaction, 'to');
@@ -69,7 +68,7 @@ class TransactionService
     {
 
         $transaction = $this->rpc->getTransactionReceipt($this->transactionAddress);
-        var_dump($transaction);
+
         $this->transactionInfo->status = (bool)hexdec(Arr::get($transaction, "status", "0x0"));
         $this->transactionInfo->logsBloom = Arr::get($transaction, "logsBloom");
         $this->transactionInfo->cumulativeGasUsed = (string)hexdec(Arr::get($transaction, "cumulativeGasUsed") ?? "");
